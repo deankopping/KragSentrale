@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import HomeBanner from "./HomeBanner";
@@ -7,16 +8,24 @@ import OpeningDoor from "./OpeningDoor";
 import PriceList from "./PriceList";
 
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
+import PopUpMenu from "./PopupMenu";
+import Footer from "./Footer";
+import CursorBlob from "./CursorBlob";
+import PageBreak from "./PageBreak";
 
 function App() {
   return (
     <>
       <Header />
       <HomeBanner />
-      <MapComponent />
+      <PageBreak />
+
       {/* <OpeningDoor /> */}
       <PriceList />
-      <Logo logoStyle="initialLoadLogo" />
+      {/* <MapComponent /> */}
+      <Logo />
+      <CursorBlob />
+      <Footer />
     </>
   );
 }

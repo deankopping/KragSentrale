@@ -1,0 +1,28 @@
+.text-wrapper {
+  width: 100%; /* Full width of the container */
+  overflow: hidden; /* Hide any content outside the container */
+  margin-block: 2em;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.text {
+  flex-shrink: 0;
+
+  font-family: "protest strike";
+  font-size: clamp(2rem, 5vw, 6rem);
+
+  font-weight: 700;
+  color: var(--colorOrange);
+
+  list-style: none;
+  animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+  to {
+    transform: translateX(-100%); /* End off-screen to the left */
+  }
+}

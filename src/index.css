@@ -1,29 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swaps");
 
-:root {
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+@import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
 
-  background-image: linear-gradient(45deg, #f0eae0, #f1e1c6, #dbc49b, #e4c693);
+:root {
+  /* background-image: linear-gradient(45deg, #f0eae0, #f1e1c6, #dbc49b, #e6c792); */
+  /* background-image: linear-gradient(45deg, #2e2e2e, #4b4b4b, #1a1a1a, #0d0d0d); */
+  /* background-image: linear-gradient(45deg, #ebeadf, #e9e4d6, #f2ddae, #f5d4af); */
+
   background-size: 300%;
   animation: bg-animation 4s infinite alternate;
-}
+  padding-left: 5em;
+  padding-right: 5em;
 
-/* :root::before {
-  content: "";
-  animation: bg-animation 0.001s infinite;
-  background-color: transparent;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 182px;
-  opacity: 0.9;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-} */
+  --colorOrange: #e1381b;
+}
 
 @keyframes bg-animation {
   0% {
@@ -50,17 +41,6 @@ body {
   width: 100%;
 }
 
-.priceListContainer {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  background-color: #213547;
-  height: 400px;
-}
-
 .mapLayoutContainer {
   display: flex;
   width: 100%;
@@ -71,27 +51,6 @@ body {
   position: relative;
   width: 50%;
   border-radius: 25px;
-}
-
-.priceListItem {
-  display: flex;
-  flex-direction: column;
-
-  padding: 1em;
-  color: #1a1a1a;
-  font-family: "inter";
-  font-size: medium;
-
-  border-image: linear-gradient(to right, #e1381b 0%, #e7a79c 100%) 1;
-  border-radius: 3px;
-  border-bottom-width: 1.5px;
-  border-bottom-style: solid;
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
-  cursor: pointer;
-  background-color: transparent;
-  width: 30em;
 }
 
 @media (max-width: 768px) {
@@ -107,49 +66,35 @@ body {
   .priceListDetails {
     width: 90%;
   }
+  :root {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
-.priceListHeader {
-  display: flex;
-  justify-content: space-between;
-}
-
-.priceListDetails {
-  padding-top: 1em;
-  font-size: 0.9em;
-  color: black;
-  background-color: cornflowerblue;
-  border-radius: 13px;
-  height: 10em;
-  width: 100%;
-  overflow: hidden;
-}
-
-.priceListDetails p {
-  margin: 0;
-}
-
-.homeBanner {
-  padding-inline: 2em;
-  display: flex;
-  justify-content: left;
-  text-align: left;
-  overflow: hidden;
-}
-
-h1 {
-  font-family: "Nunito Sans";
-  font-size: x-large;
-  color: #e1381b;
-  font-weight: 900;
-  font-size: 9em;
-  line-height: 1;
-}
 h2 {
   font-family: "Nunito Sans";
   font-size: small;
-  color: #e1381b;
+  color: var(--colorOrange);
   font-weight: 700;
   font-size: 4em;
   line-height: 1;
+}
+
+.blob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+  border-radius: 100%;
+  background-image: linear-gradient(var(--colorOrange) 5%, #ffffff);
+  filter: blur(250px);
+  transition: all 450ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: -10000;
 }

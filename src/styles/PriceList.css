@@ -1,0 +1,82 @@
+.priceListHeader {
+  margin-bottom: 2em;
+  display: flex;
+}
+
+.priceListDetails {
+  padding-top: 1em;
+  font-size: 0.9em;
+  color: black;
+  background-color: var(--colorOrange);
+
+  border-radius: 13px;
+  height: 10em;
+  width: 100%;
+  overflow: hidden;
+}
+
+.priceListDetails p {
+  margin: 0;
+}
+
+.priceListContainer {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+
+  height: 400px;
+}
+
+.priceListItem {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1em;
+  color: var(--colorOrange);
+  font-family: "inter";
+  font-size: large;
+
+  border-image: linear-gradient(to right, var(--colorOrange) 0%, #e7a79c 100%) 1;
+  border-radius: 3px;
+  border-bottom-width: 1.5px;
+  border-bottom-style: solid;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  cursor: pointer;
+  background-color: transparent;
+  width: 30em;
+}
+.priceListHeader path {
+  fill: transparent;
+  stroke: var(--colorOrange);
+
+  stroke-width: 0.2;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimation 1.3s ease-in 1 forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    fill: var(--colorOrange);
+    opacity: 100%;
+    stroke-dashoffset: 0;
+  }
+}
+
+.contentContainer {
+  position: relative;
+  display: flex;
+
+  background-color: bisque;
+  z-index: -100;
+  border-radius: 130px;
+  padding-left: 3em;
+}

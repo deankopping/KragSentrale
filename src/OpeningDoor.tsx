@@ -67,8 +67,8 @@ const OpneingDoor = () => {
         <animateTransform
           attributeName="transform"
           type="translate"
-          from="0,0"
-          to="0,-1000"
+          from="0,-1000"
+          to="0,-2000"
           dur="3s"
           fill="freeze"
           begin="0.5s"

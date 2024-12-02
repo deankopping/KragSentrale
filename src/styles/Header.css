@@ -4,9 +4,11 @@
 .container {
   width: 100%;
   position: fixed;
-  /* padding-top: 2em; */
-  top: 0;
+
+  top: 1em;
+
   left: 0;
+  z-index: 9999;
 }
 
 .items {
@@ -15,46 +17,91 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  /* background-color: #e1381b; */
+
   list-style: none;
-  gap: 2em;
   height: 6em;
+
   align-items: center;
-  justify-content: right;
-  padding-right: 5%;
+
   font-weight: 700;
 
   color: #191716;
-  text-decoration: none;
-  font-size: 1vw;
-  font-weight: 700;
 
-  font-family: "inter";
+  text-shadow: black 10;
+  text-decoration: none;
+  font-size: 1.1vw;
+
+  justify-content: space-between;
+
+  font-family: "Protest Strike";
+  margin-left: 5em;
+  margin-right: 5em;
+  gap: 2em;
 }
 
 .hamburgerMenuIcon {
   cursor: pointer;
-  width: auto;
-  height: auto;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e1381b;
-  border-radius: 17%;
+
+  background-color: var(--colorOrange);
+  border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  width: 55px;
+  height: 55px;
+  justify-content: center;
+
+  align-items: center;
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.hamburgerMenuIcon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+  transition: width 0.2s ease-in-out;
+}
+
+.hamburgerMenuIcon:hover::before {
+  width: 100%;
+}
+
+.hamburgerMenuIcon:hover {
+  background-color: black;
 }
 
 li:hover {
-  color: #e1381b; /* Change to the desired hover color */
-}
-
-li {
   cursor: pointer;
+  color: var(--colorOrange);
   transition: color 0.3s ease;
 }
 
 @media (max-width: 768px) {
   .hamburgerMenuIcon {
     margin-top: 3em;
+  }
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: row;
+
+  li {
+    padding-right: 2em;
+
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 375px) {
+  .items {
+    align-items: end;
   }
 }

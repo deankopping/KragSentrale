@@ -18,3 +18,16 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.logo {
+  fill: black;
+
+  cursor: pointer;
+}
+
+.logo:hover {
+  /* fill: #e1381b; */
+  fill: black;
+  pointer-events: all;
+  cursor: pointer;
+}
