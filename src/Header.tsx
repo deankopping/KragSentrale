@@ -47,10 +47,11 @@ const Header = ({}: {}) => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
                 >
+                  <li>LOCATION</li>
+                  <li>FACILITIES</li>
                   <li>PRICES</li>
                   <li>EVENTS</li>
                   <li>ABOUT</li>
-                  <li>FACILITIES</li>
                 </motion.div>
               </ul>
             </header>
@@ -68,7 +69,7 @@ const Header = ({}: {}) => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
             >
-              <div className="logoBg">
+              <div style={{ marginLeft: "1.5em" }}>
                 <motion.div
                   style={{
                     display: "flex",

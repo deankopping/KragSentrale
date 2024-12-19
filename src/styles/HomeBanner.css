@@ -1,18 +1,18 @@
 .homeBanner {
-  position: absolute;
   display: flex;
   align-items: flex-end;
-  top: 0;
+  width: 96%;
+  height: 95%;
 
-  width: 100vw;
-  height: 100vh;
   background-image: url("../assets/TensionBoard.jpg");
-  background-size: 150%;
-  background-position: center; /* Center the background image */
-  z-index: 1; /* Make sure it stays below the overlay */
+  background-size: 100%;
+  background-position: center;
+  z-index: 1;
+  border-radius: 2em;
 }
 
 .homeBanner::before {
+  border-radius: 2em;
   content: "";
   position: absolute;
   top: 0;
@@ -24,9 +24,18 @@
   z-index: 2; /* Make sure the gradient overlay is on top */
 }
 
+.homeBannerContainer {
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
 path {
-  fill: var(--colorOrange);
-  opacity: 97%;
+  fill: bisque;
 }
 
 .bannerImage {
@@ -103,21 +112,22 @@ path {
 
   font-family: "protest strike";
   color: white;
-  margin-left: -13px;
+
+  z-index: 10;
 }
 
 .krag {
   padding: 0;
   margin: 0;
   line-height: 0.9;
-  font-size: clamp(2em, 10em, 10em);
+  font-size: clamp(2em, 12em, 12em);
 }
 
 .sentrale {
   line-height: 0.9;
   padding: 0;
   margin: 0;
-  font-size: clamp(2em, 10em, 10em);
+  font-size: clamp(2em, 12em, 12em);
 }
 .climbing {
   line-height: 0.9;
@@ -151,7 +161,8 @@ path {
   }
 } */
 .homeBannerText {
-  flex-direction: row;
-  gap: 2em;
-  padding: 3em;
+  flex-direction: column;
+
+  padding: 1.5em;
+  align-items: baseline;
 }

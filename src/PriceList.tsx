@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./styles/PriceList.css";
 import { AnimatePresence, motion } from "motion/react";
-import { transform } from "motion";
 import { useInView } from "react-intersection-observer";
 
 const priceList = [
@@ -30,13 +29,20 @@ const priceList = [
 const PriceList = () => {
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
+  const { ref: priceListRef, inView: priceListView } = useInView({
+    threshold: 0.5,
+  });
+
   const handleOnClick = (index: number) => {
     setClickedIndex(index === clickedIndex ? null : index); // Toggle on/off
   };
 
   return (
-    <>
-      <div className="priceListHeader">
+    <div ref={priceListRef}>
+      <div
+        className={priceListView ? "priceListHeader" : ""}
+        style={{ opacity: !priceListView ? 0 : 1 }}
+      >
         <svg
           width="400"
           height="100"
@@ -138,10 +144,10 @@ const PriceList = () => {
                 key={index}
                 exit={{ opacity: 0, scale: 0 }}
                 initial={{ opacity: 1, scale: 0.95 }}
-                animate={{ translateX: index * 330 }}
+                animate={{ translateX: priceListView ? index * 330 : 0 }}
                 transition={{
                   duration: 1,
-                  delay: 2,
+                  delay: 1,
                 }}
               >
                 <h1>{item.item}</h1>
@@ -152,7 +158,7 @@ const PriceList = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

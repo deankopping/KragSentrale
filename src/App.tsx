@@ -12,12 +12,10 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
 
 function App() {
-  // const { ref: homeBannerRef, inView: homeBannerView } = useInView({
-  //   threshold: 0.5,
-  // });
-  // const { ref: priceListRef, inView: priceListView } = useInView({
-  //   threshold: 0.5,
-  // });
+  const { ref: homeBannerRef, inView: homeBannerView } = useInView({
+    threshold: 0.5,
+  });
+
   // const { ref: pageBreakRef, inView: pageBreakView } = useInView({
   //   threshold: 1,
   // });
@@ -30,13 +28,11 @@ function App() {
       <Header />
 
       <motion.div
-        // ref={homeBannerRef}
+        ref={homeBannerRef}
         initial={{ opacity: 1 }}
-        animate={
-          {
-            // filter: homeBannerView ? "none" : "blur(2em)",
-          }
-        }
+        animate={{
+          filter: homeBannerView ? "none" : "blur(1em)",
+        }}
         transition={{ duration: 0.5 }}
       >
         <HomeBanner />
@@ -57,14 +53,14 @@ function App() {
 
       <AnimatePresence>
         <motion.div
-          // ref={priceListRef}
-          initial={{ opacity: 1 }}
+          //ref={priceListRef}
+          initial={{ opacity: 1, scale: 1 }}
           animate={
             {
               // filter: priceListView ? "none" : "blur(2em)",
             }
           }
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1 }}
         >
           <PriceList />
         </motion.div>
