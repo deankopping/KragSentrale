@@ -1,6 +1,6 @@
 .priceListHeader {
-  margin-bottom: 2em;
   display: flex;
+  margin-left: 5em;
 }
 
 .priceListDetails {
@@ -19,15 +19,7 @@
   margin: 0;
 }
 
-.priceListContainer {
-  margin-top: 2em;
-  display: flex;
-  flex-direction: column;
-
-  height: 400px;
-}
-
-.priceListItem {
+.dropDownPriceListItem {
   display: flex;
   flex-direction: column;
 
@@ -45,7 +37,6 @@
   border-right: transparent;
   cursor: pointer;
   background-color: transparent;
-  width: 30em;
 }
 .priceListHeader path {
   fill: transparent;
@@ -54,16 +45,18 @@
   stroke-width: 0.2;
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
-  animation: textAnimation 1.3s ease-in 1 forwards;
+  animation: textAnimation 0.5s ease-in-out 1 forwards;
 }
 
 @keyframes textAnimation {
   0% {
     stroke-dashoffset: 50;
   }
-  80% {
+
+  70% {
     fill: transparent;
   }
+
   100% {
     fill: var(--colorOrange);
     opacity: 100%;
@@ -72,11 +65,77 @@
 }
 
 .contentContainer {
-  position: relative;
+  margin-left: 5em;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); */
   display: flex;
 
+  justify-self: center;
+
+  border-radius: 80px;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: fit-content;
+
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+.priceListContainer {
+  display: flex;
+  position: relative;
+
+  height: 20em;
+
+  justify-content: space-between;
+
+  gap: 1em;
+}
+
+.priceListCard {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+
   background-color: bisque;
-  z-index: -100;
-  border-radius: 130px;
-  padding-left: 3em;
+  color: var(--colorOrange);
+  font-family: "protest strike";
+
+  height: 100%;
+  width: 18em;
+
+  border-radius: 30px;
+
+  flex-grow: 1;
+  position: absolute;
+
+  justify-content: space-between;
+}
+
+@media (max-width: 375px) {
+  .contentContainer {
+    width: 94%;
+    padding-left: 0;
+    justify-content: center;
+    border-radius: 100px;
+  }
+
+  .priceListContainer {
+    visibility: hidden;
+    display: none;
+  }
+
+  .priceListHeader {
+    visibility: hidden;
+    display: none;
+  }
+}
+@media (min-width: 375px) {
+  .dropDownPriceListItem {
+    visibility: hidden;
+    display: none;
+  }
 }

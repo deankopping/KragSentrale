@@ -1,35 +1,57 @@
-
-
 .homeBanner {
-  position: relative;
+  position: absolute;
   display: flex;
- 
-  background-color: bisque;
-  z-index: -100;
-border-radius: 130px;
-height: 560px;
-  
-  margin-top: 7em;
- 
+  align-items: flex-end;
+  top: 0;
 
-  path{
-    fill : var(--colorOrange);
-    opacity: 95%;
-  }
-  
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/TensionBoard.jpg");
+  background-size: 150%;
+  background-position: center; /* Center the background image */
+  z-index: 1; /* Make sure it stays below the overlay */
+}
+
+.homeBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  /* backdrop-filter: blur(10px);  */
+  z-index: 2; /* Make sure the gradient overlay is on top */
+}
+
+path {
+  fill: var(--colorOrange);
+  opacity: 97%;
 }
 
 .bannerImage {
-  background-color: aliceblue;
   width: 38em;
   height: 31em;
   position: absolute;
   border-radius: 25px;
-  right: 0;
+
   top: 2em;
   z-index: -1;
   overflow: hidden;
 }
+
+.bannerImageMobile {
+  width: 90%;
+  height: 20em;
+
+  border-radius: 25px;
+  display: flex;
+  justify-self: center;
+  margin-top: 1em;
+
+  overflow: hidden;
+}
+
 .image {
   width: 100%;
   height: 100%;
@@ -39,21 +61,80 @@ height: 560px;
 @media (max-width: 375px) {
   .homeBanner {
     justify-content: center;
-    width: 100%;
-
+    width: 94%;
+    justify-self: center;
     align-items: center;
-    margin-top: 8em;
+
+    border-radius: 70px;
+    height: fit-content;
+    padding-block: 2em;
+  }
+
+  .homeBannerText {
+    flex-direction: row;
+    margin-left: 0px;
+  }
+
+  .bannerImage {
+    visibility: hidden;
+    display: none;
   }
 }
 
-/* svg path {
+@media (min-width: 700px) {
+  .homeBanner {
+    position: relative;
+  }
+  .bannerImage {
+    right: 0;
+  }
+
+  .bannerImageMobile {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+.homeBannerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+
+  font-family: "protest strike";
+  color: white;
+  margin-left: -13px;
+}
+
+.krag {
+  padding: 0;
+  margin: 0;
+  line-height: 0.9;
+  font-size: clamp(2em, 10em, 10em);
+}
+
+.sentrale {
+  line-height: 0.9;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(2em, 10em, 10em);
+}
+.climbing {
+  line-height: 0.9;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(2em, 7em, 6em);
+}
+
+/* 
+path {
   fill: transparent;
   stroke: var(--colorOrange);
 
   stroke-width: 0.2;
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
-  animation: textAnimation 1.5s ease-in-out 1 forwards;
+  animation: textAnimation 1.3s ease-in 1 forwards;
 }
 
 @keyframes textAnimation {
@@ -68,4 +149,9 @@ height: 560px;
     opacity: 100%;
     stroke-dashoffset: 0;
   }
-} 
+} */
+.homeBannerText {
+  flex-direction: row;
+  gap: 2em;
+  padding: 3em;
+}

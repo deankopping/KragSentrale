@@ -5,7 +5,8 @@
   width: 100%;
   position: fixed;
 
-  top: 1em;
+  top: 0em;
+  padding-top: 1em;
 
   left: 0;
   z-index: 9999;
@@ -15,7 +16,7 @@
   position: relative;
   margin: 0%;
   display: flex;
-  flex-wrap: wrap;
+
   flex-direction: row;
 
   list-style: none;
@@ -25,17 +26,17 @@
 
   font-weight: 700;
 
-  color: #191716;
+  color: bisque;
 
   text-shadow: black 10;
   text-decoration: none;
-  font-size: 1.1vw;
+  font-size: 1.3vw;
 
   justify-content: space-between;
 
   font-family: "Protest Strike";
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 3em;
+  margin-right: 3em;
   gap: 2em;
 }
 
@@ -65,7 +66,7 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: black;
+  background-color: var(--bkBrown);
   transition: width 0.2s ease-in-out;
 }
 

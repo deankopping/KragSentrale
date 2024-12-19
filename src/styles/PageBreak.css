@@ -1,7 +1,6 @@
 .text-wrapper {
   width: 100%; /* Full width of the container */
   overflow: hidden; /* Hide any content outside the container */
-  margin-block: 2em;
 
   display: flex;
   flex-direction: row;
