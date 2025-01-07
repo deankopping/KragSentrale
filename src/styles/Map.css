@@ -1,0 +1,41 @@
+.mapSection {
+  margin-inline: 2em;
+
+  display: flex;
+
+  background-color: bisque;
+  z-index: -100;
+  border-radius: 130px;
+  height: 560px;
+  align-items: center;
+
+  justify-content: space-between;
+  padding-inline: 3em;
+
+  path {
+    fill: var(--colorOrange);
+  }
+}
+.mapContainer {
+  width: 38em;
+  height: 31em;
+  display: flex;
+  border-radius: 25px;
+
+  overflow: hidden;
+}
+
+.adress {
+  font-family: "protest strike";
+  color: var(--colorOrange);
+  display: flex;
+  font-size: 6em;
+
+  align-self: self-start;
+}
+
+.parking {
+  display: flex;
+  font-family: "protest strike";
+  font-size: 2em;
+}

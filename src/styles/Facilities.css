@@ -1,0 +1,49 @@
+.tag-list {
+  margin-top: 2em;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+
+  font-family: "protest strike";
+
+  width: 20rem;
+}
+
+.scroller {
+  max-width: 100rem;
+  outline: 3px solid lime;
+  overflow: hidden;
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.scroller-inner {
+  padding-block: 1rem;
+  display: flex;
+
+  gap: 1rem;
+
+  flex-wrap: nowrap;
+
+  animation: scroll 40s linear infinite;
+
+  width: fit-content;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}

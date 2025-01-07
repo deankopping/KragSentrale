@@ -7,7 +7,7 @@ const priceList = [
   {
     item: "DAY PASS",
     price: "R120",
-    details: "Access for one day from 9 AM to 5 PM.",
+    details: "Available from Tuesday - Thursday, 16:00 - 21:00",
   },
   {
     item: "MEMBERSHIP",
@@ -31,6 +31,7 @@ const PriceList = () => {
 
   const { ref: priceListRef, inView: priceListView } = useInView({
     threshold: 0.5,
+    triggerOnce: true,
   });
 
   const handleOnClick = (index: number) => {
@@ -40,12 +41,12 @@ const PriceList = () => {
   return (
     <div ref={priceListRef}>
       <div
-        className={priceListView ? "priceListHeader" : ""}
+        className={priceListView ? "sectionHeaders" : ""}
         style={{ opacity: !priceListView ? 0 : 1 }}
       >
         <svg
           width="400"
-          height="100"
+          height="70"
           viewBox="0 0 330 62"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,6 @@
 
   display: flex;
   flex-direction: row;
-  gap: 1em;
 }
 
 .text {
@@ -22,6 +21,6 @@
 
 @keyframes scrollText {
   to {
-    transform: translateX(-100%); /* End off-screen to the left */
+    transform: translateX(calc(-100%)); /* End off-screen to the left */
   }
 }

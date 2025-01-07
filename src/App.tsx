@@ -10,6 +10,7 @@ import PageBreak from "./PageBreak";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
+import Facilities from "./Facilities";
 
 function App() {
   const { ref: homeBannerRef, inView: homeBannerView } = useInView({
@@ -78,6 +79,7 @@ function App() {
       >
         <MapComponent />
       </motion.div>
+      <Facilities />
 
       {/* <Logo /> */}
       <CursorBlob />
