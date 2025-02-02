@@ -8,31 +8,87 @@ const Facilities = () => {
     <div className="scroller">
       <ul className="tag-list scroller-inner">
         <motion.li
-          whileHover={{
-            scale: 1.2,
-            transition: { duration: 0.1 },
-          }}
-        >
-          <img src={TensionBoard} alt="Tension Board" className="image" />
-        </motion.li>
-        <li>Kilter Board</li>
-        <li>Spray Wall</li>
-        <li>Bouldering Walls</li>
-        <li>Gym Area</li>
-        <li>
-          <img src={TensionBoard} alt="Tension Board" className="image" />
-        </li>
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.1 },
+        //   }}
+        ></motion.li>
         <motion.li
-          whileHover={{
-            scale: 1.2,
-            transition: { duration: 0.5 },
-          }}
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
         >
           Kilter Board
         </motion.li>
-        <li>Spray Wall</li>
-        <li>Bouldering Walls</li>
-        <li>Gym Area</li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          Spray Wall
+        </motion.li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          Bouldering Walls
+        </motion.li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          Gym Area
+        </motion.li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          <div className="tb2">
+            <div className="tag">
+              <p>Tension Board 2</p>
+            </div>
+          </div>
+        </motion.li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          Kilter Board
+        </motion.li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          Spray Wall
+        </motion.li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          Bouldering Walls
+        </motion.li>
+        <motion.li
+        //   whileHover={{
+        //     scale: 1.2,
+        //     transition: { duration: 0.5 },
+        //   }}
+        >
+          Gym Area
+        </motion.li>
       </ul>
     </div>
   );

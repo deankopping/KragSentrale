@@ -5,17 +5,13 @@ import { Divide as Hamburger } from "hamburger-react";
 import { Logo } from "./Logo";
 import PopUpMenu from "./PopupMenu";
 import Socials from "./Socials";
+import { useMediaQuery } from "react-responsive";
 
 const Header = ({}: {}) => {
   const [isScrolled, setIsScrolled] = useState(window.innerWidth <= 768);
   const [isOpen, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    if (window.innerWidth <= 375) {
-      setIsMobile(true);
-    }
-  }, []);
+  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
 
   useEffect(() => {
     const handleScroll = () => {

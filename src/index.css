@@ -3,11 +3,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Protest+Strike&display=swap");
+
 :root {
   background-size: 300%;
   animation: bg-animation 4s infinite alternate;
 
-  background-color: var(--offWhite);
+  /* background-color: var(--offWhite); */
+  background-color: #e1dddb;
 
   --offWhite: rgb(248, 242, 233);
 
@@ -15,6 +18,34 @@
 
   --bkBrown: rgb(80, 35, 20);
   overflow-x: hidden;
+  /* color: rgb(79, 66, 66); */
+  color: rgb(80, 35, 20);
+
+  h2 {
+    font-family: "protest strike";
+    margin: 0rem;
+    font-size: 6em;
+    color: white;
+  }
+
+  h3 {
+    font-family: "protest strike";
+    margin: 0rem;
+    font-size: 5em;
+
+    color: var(--colorOrange);
+  }
+  @media (max-width: 450px) {
+    h2 {
+      font-size: 3em;
+    }
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      font-size: small;
+    }
+  }
 }
 
 @keyframes bg-animation {
@@ -97,13 +128,6 @@ h2 {
   transform: translate(calc(-50% + 15px), -50%);
   z-index: -1000;
   opacity: 100%;
-}
-
-.sectionHeaders {
-  margin-top: 3em;
-  margin-bottom: 1em;
-  display: flex;
-  margin-left: 3em;
 }
 
 .sectionHeaders path {

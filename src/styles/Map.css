@@ -2,22 +2,25 @@
   margin-inline: 2em;
 
   display: flex;
+  flex-direction: column;
+  gap: 1em;
 
-  background-color: bisque;
+  background-color: var(--bkBrown);
   z-index: -100;
-  border-radius: 130px;
-  height: 560px;
+  border-radius: 4em;
+
   align-items: center;
 
   justify-content: space-between;
-  padding-inline: 3em;
+
+  padding: 2em;
 
   path {
     fill: var(--colorOrange);
   }
 }
 .mapContainer {
-  width: 38em;
+  width: 50em;
   height: 31em;
   display: flex;
   border-radius: 25px;
@@ -25,17 +28,17 @@
   overflow: hidden;
 }
 
-.adress {
-  font-family: "protest strike";
-  color: var(--colorOrange);
+.adressDetails {
   display: flex;
-  font-size: 6em;
 
-  align-self: self-start;
+  h3 {
+    font-size: 2em;
+  }
 }
 
-.parking {
-  display: flex;
+.adress {
   font-family: "protest strike";
-  font-size: 2em;
+  color: white;
+  display: flex;
+  font-size: 5em;
 }

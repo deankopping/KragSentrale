@@ -1,5 +1,4 @@
-import { motion } from "motion/react";
-
+import { Logo } from "./Logo";
 import "./styles/PageBreak.css";
 
 const PageBreak = () => {

@@ -2,13 +2,12 @@ import { AnimatePresence, motion } from "motion/react";
 
 import "./styles/PopUpMenu.css";
 import { useEffect, useState } from "react";
-import Socials from "./Socials";
 
 const PopUpMenu = ({ isOpen }: { isOpen: boolean }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 400);
 
   useEffect(() => {
-    if (window.innerWidth <= 375) {
+    if (window.innerWidth <= 400) {
       setIsMobile(true);
     }
   }, []);
@@ -23,7 +22,7 @@ const PopUpMenu = ({ isOpen }: { isOpen: boolean }) => {
           animate={{
             opacity: 1,
             scale: 1,
-            width: isMobile ? "100%" : "300px",
+            width: isMobile ? "94vw" : "300px",
             height: "fit-content",
           }}
           transition={{
@@ -37,7 +36,6 @@ const PopUpMenu = ({ isOpen }: { isOpen: boolean }) => {
           <h4 className="popUpMenuItem">Price List</h4>
           <h4 className="popUpMenuItem">About</h4>
           <h4 className="popUpMenuItem">Contact</h4>
-          <Socials />
         </motion.div>
       )}
     </AnimatePresence>

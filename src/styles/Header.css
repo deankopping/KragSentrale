@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swaps");
 
 .container {
-  width: 100%;
+  width: 100vw;
   position: fixed;
 
   top: 0em;
@@ -13,7 +13,7 @@
 }
 
 .items {
-  position: relative;
+  /* position: relative; */
   margin: 0%;
   display: flex;
 
@@ -57,6 +57,7 @@
   position: relative;
   overflow: hidden;
   transition: background-color 0.2s ease-in-out;
+  margin-right: 1em;
 }
 
 .hamburgerMenuIcon::before {
@@ -101,8 +102,15 @@ li:hover {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
+  .container {
+    padding-top: 2.5em;
+    height: 10vh;
+    position: fixed;
+    top: 0em;
+  }
   .items {
     align-items: end;
+    margin-top: 3em;
   }
 }

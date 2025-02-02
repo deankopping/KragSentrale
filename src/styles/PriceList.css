@@ -1,104 +1,145 @@
-.priceListDetails {
-  padding-top: 1em;
-  font-size: 0.9em;
-  color: black;
-  background-color: var(--colorOrange);
-
-  border-radius: 13px;
-  height: 10em;
-  width: 100%;
-  overflow: hidden;
-}
-
-.priceListDetails p {
-  margin: 0;
-}
-
-.dropDownPriceListItem {
-  display: flex;
-  flex-direction: column;
-
-  padding: 1em;
-  color: var(--colorOrange);
-  font-family: "inter";
-  font-size: large;
-
-  border-image: linear-gradient(to right, var(--colorOrange) 0%, #e7a79c 100%) 1;
-  border-radius: 3px;
-  border-bottom-width: 1.5px;
-  border-bottom-style: solid;
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
-  cursor: pointer;
-  background-color: transparent;
-}
-
 .contentContainer {
-  margin-inline: 2em;
-
   display: flex;
 
-  z-index: -100;
-  border-radius: 130px;
+  width: 100%;
+  height: 100%;
 
-  align-items: center;
+  margin-bottom: 2em;
 
-  padding-inline: 2em;
+  justify-content: center;
+  align-items: start;
+
+  margin-top: 2em;
 }
 
 .priceListContainer {
   display: flex;
   position: relative;
 
-  height: 20em;
+  width: 30%;
+}
 
-  justify-content: space-between;
+.react-markdown {
+  font-size: 18px;
 
-  gap: 1em;
+  h1 {
+    font-family: "protest strike";
+  }
+}
+
+.details {
+  display: flex;
+  background-color: var(--offWhite);
+  width: 60%;
+
+  margin-left: 1em;
+  height: 100%;
+
+  border-radius: 4em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+  justify-content: center;
+  align-items: center;
+
+  padding-inline: 2em;
+  text-align: left;
 }
 
 .priceListCard {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 
-  background-color: bisque;
+  background-color: var(--offWhite);
   color: var(--colorOrange);
   font-family: "protest strike";
 
-  height: 100%;
-  width: 18em;
+  height: 5em;
+  width: 100%;
 
   border-radius: 30px;
-
-  flex-grow: 1;
   position: absolute;
 
   justify-content: space-between;
+  cursor: pointer;
+  justify-content: center;
 }
 
-@media (max-width: 375px) {
+.entranceInfoContainer {
+  margin-bottom: 1em;
+  background-image: url("../assets/bannerImage2.jpeg");
+  display: flex;
+
+  flex-direction: column;
+  padding-inline: 1em;
+  border-radius: 4em;
+
+  font-family: "Oswald", serif;
+  font-weight: bold;
+  margin-inline: 2em;
+
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  padding-top: 2rem;
+
+  height: 90vh;
+}
+
+@media (max-width: 450px) {
+  .title {
+    visibility: hidden;
+    display: none;
+  }
+  .entranceInfoContainer {
+    background-color: transparent;
+    margin-inline: 0;
+    padding-inline: 0;
+    box-shadow: none;
+    border-radius: 0;
+    height: auto;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    gap: 1em;
+  }
+
+  .details {
+    /* height: max-content; */
+    width: 90%;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+    align-self: center;
+    height: fit-content;
+    margin-top: 1em;
+  }
+
+  .priceListCard {
+    align-items: center;
+    border-radius: 1em;
+
+    height: 4em;
+    position: relative;
+    word-spacing: 3em;
+  }
+
   .contentContainer {
-    width: 94%;
-    padding-left: 0;
-    justify-content: center;
-    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    justify-content: start;
+
+    gap: 1em;
+  }
+
+  .react-markdown {
+    font-size: small;
   }
 
   .priceListContainer {
-    visibility: hidden;
-    display: none;
-  }
-
-  .priceListHeader {
-    visibility: hidden;
-    display: none;
-  }
-}
-@media (min-width: 375px) {
-  .dropDownPriceListItem {
-    visibility: hidden;
-    display: none;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    gap: 0.5em;
+    width: 100%;
   }
 }

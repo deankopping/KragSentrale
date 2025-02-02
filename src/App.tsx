@@ -11,18 +11,12 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
 import Facilities from "./Facilities";
+import AboutUs from "./AboutUs";
 
 function App() {
   const { ref: homeBannerRef, inView: homeBannerView } = useInView({
     threshold: 0.5,
   });
-
-  // const { ref: pageBreakRef, inView: pageBreakView } = useInView({
-  //   threshold: 1,
-  // });
-  // const { ref: mapRef, inView: mapView } = useInView({
-  //   threshold: 0.5,
-  // });
 
   return (
     <>
@@ -39,49 +33,24 @@ function App() {
         <HomeBanner />
       </motion.div>
 
-      <motion.div
-        // ref={pageBreakRef}
-        initial={{ opacity: 1 }}
-        animate={
-          {
-            // filter: pageBreakView ? "none" : "blur(2em)",
-          }
-        }
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div initial={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         <PageBreak />
       </motion.div>
 
       <AnimatePresence>
         <motion.div
-          //ref={priceListRef}
           initial={{ opacity: 1, scale: 1 }}
-          animate={
-            {
-              // filter: priceListView ? "none" : "blur(2em)",
-            }
-          }
           transition={{ duration: 1 }}
         >
           <PriceList />
         </motion.div>
       </AnimatePresence>
-
-      <motion.div
-        // ref={mapRef}
-        initial={{ opacity: 1 }}
-        animate={
-          {
-            // filter: mapView ? "none" : "blur(2em)",
-          }
-        }
-        transition={{ duration: 0.5 }}
-      >
-        <MapComponent />
-      </motion.div>
       <Facilities />
 
-      {/* <Logo /> */}
+      <motion.div initial={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+        <MapComponent />
+      </motion.div>
+
       <CursorBlob />
       <Footer />
     </>
