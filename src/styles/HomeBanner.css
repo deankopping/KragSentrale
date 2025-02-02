@@ -1,59 +1,156 @@
-
-
 .homeBanner {
-  position: relative;
   display: flex;
- 
-  background-color: bisque;
-  z-index: -100;
-border-radius: 130px;
-height: 560px;
-  
-  margin-top: 7em;
- 
+  align-items: flex-end;
+  width: 96%;
+  height: 95%;
 
-  path{
-    fill : var(--colorOrange);
-    opacity: 95%;
-  }
-  
+  background-image: url("../assets/bannerImage2.jpeg");
+  background-size: 100%;
+  background-position: center;
+  z-index: 1;
+  border-radius: 2em;
+}
+
+.homeBanner::before {
+  content: "";
+  position: absolute;
+  border-radius: 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  /* backdrop-filter: blur(10px);  */
+  z-index: 2; /* Make sure the gradient overlay is on top */
+}
+
+.homeBannerContainer {
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+path {
+  fill: var(--offWhite);
 }
 
 .bannerImage {
-  background-color: aliceblue;
   width: 38em;
   height: 31em;
   position: absolute;
   border-radius: 25px;
-  right: 0;
+
   top: 2em;
   z-index: -1;
   overflow: hidden;
 }
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-@media (max-width: 375px) {
+@media (min-width: 700px) {
   .homeBanner {
-    justify-content: center;
-    width: 100%;
-
-    align-items: center;
-    margin-top: 8em;
+    position: relative;
+  }
+  .bannerImage {
+    right: 0;
+  }
+  .aboutUs {
+    display: none;
   }
 }
 
-/* svg path {
+.homeBannerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+
+  font-family: "protest strike";
+  color: white;
+
+  z-index: 10;
+}
+
+.krag {
+  padding: 0;
+  margin: 0;
+  line-height: 0.9;
+  font-size: clamp(2em, 12em, 12em);
+}
+
+.sentrale {
+  line-height: 0.9;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(2em, 12em, 12em);
+}
+.climbing {
+  line-height: 0.9;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(2em, 7em, 6em);
+}
+@media (max-width: 450px) {
+  .mainHeading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .krag {
+    font-size: 9em;
+    display: flex;
+  }
+
+  .sentrale {
+    font-size: 5em;
+  }
+  .homeBannerContainer {
+    /* height: 30vh; */
+    /* padding-top: 12vh; */
+    background-color: aqua;
+    align-items: start;
+    height: fit-content;
+  }
+
+  .homeBannerText {
+    text-align: left;
+    /* background-color: aliceblue; */
+    display: flex;
+    gap: 1em;
+
+    /* min-height: 80vh; */
+    /* justify-content: space-between; */
+  }
+  .homeBanner {
+    justify-content: center;
+    /* background-image: url("../assets/MobileBanner.jpg"); */
+    background-image: url("../assets/mobileBannerImage2.jpeg");
+    background-size: cover;
+    width: 100vw;
+    border-radius: 0%;
+    /* position: absolute; */
+    /* top: 0; */
+    height: auto;
+    align-items: flex-start;
+    padding-top: 5em;
+  }
+  .homeBanner::before {
+    border-radius: 0;
+  }
+}
+
+/* 
+path {
   fill: transparent;
   stroke: var(--colorOrange);
 
   stroke-width: 0.2;
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
-  animation: textAnimation 1.5s ease-in-out 1 forwards;
+  animation: textAnimation 1.3s ease-in 1 forwards;
 }
 
 @keyframes textAnimation {
@@ -68,4 +165,10 @@ height: 560px;
     opacity: 100%;
     stroke-dashoffset: 0;
   }
-} 
+} */
+.homeBannerText {
+  flex-direction: column;
+
+  padding: 1.5em;
+  align-items: baseline;
+}

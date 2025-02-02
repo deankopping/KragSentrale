@@ -1,18 +1,17 @@
 .text-wrapper {
   width: 100%; /* Full width of the container */
   overflow: hidden; /* Hide any content outside the container */
-  margin-block: 2em;
 
   display: flex;
   flex-direction: row;
-  gap: 1em;
+  margin-bottom: 2em;
 }
 
 .text {
   flex-shrink: 0;
 
   font-family: "protest strike";
-  font-size: clamp(2rem, 5vw, 6rem);
+  font-size: clamp(2rem, 6vw, 7rem);
 
   font-weight: 700;
   color: var(--colorOrange);
@@ -21,8 +20,15 @@
   animation: scrollText 20s linear infinite;
 }
 
+@media (max-width: 450px) {
+  .text-wrapper {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+}
+
 @keyframes scrollText {
   to {
-    transform: translateX(-100%); /* End off-screen to the left */
+    transform: translateX(calc(-100%)); /* End off-screen to the left */
   }
 }

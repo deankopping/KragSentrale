@@ -3,17 +3,49 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
 
-:root {
-  /* background-image: linear-gradient(45deg, #f0eae0, #f1e1c6, #dbc49b, #e6c792); */
-  /* background-image: linear-gradient(45deg, #2e2e2e, #4b4b4b, #1a1a1a, #0d0d0d); */
-  /* background-image: linear-gradient(45deg, #ebeadf, #e9e4d6, #f2ddae, #f5d4af); */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Protest+Strike&display=swap");
 
+:root {
   background-size: 300%;
   animation: bg-animation 4s infinite alternate;
-  padding-left: 5em;
-  padding-right: 5em;
+
+  /* background-color: var(--offWhite); */
+  background-color: #e1dddb;
+
+  --offWhite: rgb(248, 242, 233);
 
   --colorOrange: #e1381b;
+
+  --bkBrown: rgb(80, 35, 20);
+  overflow-x: hidden;
+  /* color: rgb(79, 66, 66); */
+  color: rgb(80, 35, 20);
+
+  h2 {
+    font-family: "protest strike";
+    margin: 0rem;
+    font-size: 6em;
+    color: white;
+  }
+
+  h3 {
+    font-family: "protest strike";
+    margin: 0rem;
+    font-size: 5em;
+
+    color: var(--colorOrange);
+  }
+  @media (max-width: 450px) {
+    h2 {
+      font-size: 3em;
+    }
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      font-size: small;
+    }
+  }
 }
 
 @keyframes bg-animation {
@@ -37,8 +69,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  width: 100%;
 }
 
 .mapLayoutContainer {
@@ -88,7 +118,7 @@ h2 {
   width: 450px;
   height: 450px;
   border-radius: 100%;
-  background-image: linear-gradient(var(--colorOrange) 5%, #ffffff);
+  background-image: linear-gradient(var(--colorOrange) 1%, #ffffff);
   filter: blur(250px);
   transition: all 450ms ease-out;
   position: fixed;
@@ -96,5 +126,32 @@ h2 {
   left: 0;
   top: 0;
   transform: translate(calc(-50% + 15px), -50%);
-  z-index: -10000;
+  z-index: -1000;
+  opacity: 100%;
+}
+
+.sectionHeaders path {
+  fill: transparent;
+  stroke: var(--colorOrange);
+
+  stroke-width: 0.2;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimation 0.7s ease-in-out 1 forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 50;
+  }
+
+  70% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: var(--colorOrange);
+    opacity: 100%;
+    stroke-dashoffset: 0;
+  }
 }

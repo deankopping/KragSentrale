@@ -2,20 +2,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swaps");
 
 .container {
-  width: 100%;
+  width: 100vw;
   position: fixed;
 
-  top: 1em;
+  top: 0em;
+  padding-top: 1em;
 
   left: 0;
   z-index: 9999;
 }
 
 .items {
-  position: relative;
+  /* position: relative; */
   margin: 0%;
   display: flex;
-  flex-wrap: wrap;
+
   flex-direction: row;
 
   list-style: none;
@@ -25,18 +26,18 @@
 
   font-weight: 700;
 
-  color: #191716;
+  color: bisque;
 
   text-shadow: black 10;
   text-decoration: none;
-  font-size: 1.1vw;
+  font-size: 1.3vw;
 
   justify-content: space-between;
 
   font-family: "Protest Strike";
-  margin-left: 5em;
-  margin-right: 5em;
-  gap: 2em;
+
+  margin-right: 2em;
+  margin-left: 1em;
 }
 
 .hamburgerMenuIcon {
@@ -56,6 +57,7 @@
   position: relative;
   overflow: hidden;
   transition: background-color 0.2s ease-in-out;
+  margin-right: 1em;
 }
 
 .hamburgerMenuIcon::before {
@@ -65,7 +67,7 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: black;
+  background-color: var(--bkBrown);
   transition: width 0.2s ease-in-out;
 }
 
@@ -100,8 +102,15 @@ li:hover {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
+  .container {
+    padding-top: 2.5em;
+    height: 10vh;
+    position: fixed;
+    top: 0em;
+  }
   .items {
     align-items: end;
+    margin-top: 3em;
   }
 }

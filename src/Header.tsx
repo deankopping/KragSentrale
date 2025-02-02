@@ -5,21 +5,17 @@ import { Divide as Hamburger } from "hamburger-react";
 import { Logo } from "./Logo";
 import PopUpMenu from "./PopupMenu";
 import Socials from "./Socials";
+import { useMediaQuery } from "react-responsive";
 
 const Header = ({}: {}) => {
   const [isScrolled, setIsScrolled] = useState(window.innerWidth <= 768);
   const [isOpen, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    if (window.innerWidth <= 375) {
-      setIsMobile(true);
-    }
-  }, []);
+  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30); // Adjust scroll threshold as needed
+      setIsScrolled(window.scrollY > 30);
     };
 
     if (window.innerWidth > 768) {
@@ -47,10 +43,11 @@ const Header = ({}: {}) => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
                 >
+                  <li>LOCATION</li>
+                  <li>FACILITIES</li>
                   <li>PRICES</li>
                   <li>EVENTS</li>
                   <li>ABOUT</li>
-                  <li>FACILITIES</li>
                 </motion.div>
               </ul>
             </header>
@@ -60,7 +57,7 @@ const Header = ({}: {}) => {
 
       <AnimatePresence>
         {(isMobile || isScrolled) && (
-          <header className="container">
+          <header className="container gradient-blur">
             <motion.div
               className="items"
               exit={{ opacity: 0, scale: 0 }}
@@ -68,71 +65,73 @@ const Header = ({}: {}) => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
             >
-              <motion.div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: "0.5em",
-                }}
-              >
+              <div style={{ marginLeft: "1.5em" }}>
                 <motion.div
-                  whileHover={{
-                    rotate: 360,
-                    transition: { duration: 1.2 },
-                  }}
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: "easeInOut",
-                    delay: 0.1,
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "0.5em",
                   }}
                 >
-                  <Logo introAnimate={false} width="60" height="60" />
+                  <motion.div
+                    whileHover={{
+                      rotate: 360,
+                      transition: { duration: 1.2 },
+                    }}
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    exit={{ opacity: 0, scale: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeInOut",
+                      delay: 0.1,
+                    }}
+                  >
+                    <Logo introAnimate={false} width="60" height="60" />
+                  </motion.div>
+                  <motion.div
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    whileHover={{
+                      rotate: 360,
+                      transition: { duration: 1.2 },
+                    }}
+                    exit={{ opacity: 0, scale: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeInOut",
+                      delay: 0.3,
+                    }}
+                  >
+                    <Logo introAnimate={false} width="60" height="60" />
+                  </motion.div>
+                  <motion.div
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    whileHover={{
+                      rotate: 360,
+                      transition: { duration: 1.2 },
+                    }}
+                    exit={{ opacity: 0, scale: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    }}
+                  >
+                    <Logo introAnimate={false} width="60" height="60" />
+                  </motion.div>
                 </motion.div>
-                <motion.div
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  whileHover={{
-                    rotate: 360,
-                    transition: { duration: 1.2 },
-                  }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: "easeInOut",
-                    delay: 0.3,
-                  }}
-                >
-                  <Logo introAnimate={false} width="60" height="60" />
-                </motion.div>
-                <motion.div
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  whileHover={{
-                    rotate: 360,
-                    transition: { duration: 1.2 },
-                  }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: "easeInOut",
-                    delay: 0.5,
-                  }}
-                >
-                  <Logo introAnimate={false} width="60" height="60" />
-                </motion.div>
-              </motion.div>
+              </div>
 
               <motion.div className="hamburgerMenuIcon">
                 <Hamburger

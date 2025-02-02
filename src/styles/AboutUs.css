@@ -1,0 +1,16 @@
+.aboutContainer {
+  margin-left: 1em;
+
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  border-radius: 6em;
+
+  z-index: 100;
+
+  margin-right: 0.5em;
+  p {
+    font-family: "Oswald", serif;
+    color: white;
+    font-size: 1em;
+  }
+}

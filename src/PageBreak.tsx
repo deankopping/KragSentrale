@@ -1,12 +1,12 @@
-import { motion } from "motion/react";
-
+import { Logo } from "./Logo";
 import "./styles/PageBreak.css";
 
 const PageBreak = () => {
   return (
     <ul className="text-wrapper">
-      <li className="text">SUNDAY - MONDAY 24 / 7</li>
-      <li className="text">SUNDAY - MONDAY 24 / 7</li>
+      <li className="text">- 24 / 7 ACCESS FOR MEMBERS -</li>
+      <li className="text">- 24 / 7 ACESSS FOR MEMBERS -</li>
+      <li className="text">- 24 / 7 ACESSS FOR MEMBERS -</li>
     </ul>
   );
 };

@@ -1,0 +1,44 @@
+.mapSection {
+  margin-inline: 2em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  background-color: var(--bkBrown);
+  z-index: -100;
+  border-radius: 4em;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 2em;
+
+  path {
+    fill: var(--colorOrange);
+  }
+}
+.mapContainer {
+  width: 50em;
+  height: 31em;
+  display: flex;
+  border-radius: 25px;
+
+  overflow: hidden;
+}
+
+.adressDetails {
+  display: flex;
+
+  h3 {
+    font-size: 2em;
+  }
+}
+
+.adress {
+  font-family: "protest strike";
+  color: white;
+  display: flex;
+  font-size: 5em;
+}

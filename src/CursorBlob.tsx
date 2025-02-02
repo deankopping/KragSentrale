@@ -5,7 +5,7 @@ const CursorBlob = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: { clientX: any; clientY: any }) => {
       const x = e.clientX;
       const y = e.clientY;
       setCursorPosition({ x, y });
