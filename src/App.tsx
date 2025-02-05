@@ -45,7 +45,7 @@ function App() {
           <PriceList />
         </motion.div>
       </AnimatePresence>
-      <Facilities />
+      <Facilities artworks={["srdfgs", "dfgt"]} />
 
       <motion.div initial={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         <MapComponent />

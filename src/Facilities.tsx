@@ -1,97 +1,46 @@
 import "./styles/Facilities.css";
 
-import TensionBoard from "./assets/TensionBoard.jpg";
-import { motion } from "framer-motion";
+import React from "react";
 
-const Facilities = () => {
+const imageFiles = import.meta.glob("/public/**/*.{jpg,jpeg,png}", {
+  eager: true,
+  as: "url",
+});
+
+const images = Object.values(imageFiles);
+
+export type ItemProps = React.ButtonHTMLAttributes<HTMLDivElement>;
+
+export default function Facilities() {
+  function Items({ children, ...props }: ItemProps) {
+    return (
+      <div className="items" {...props}>
+        {children}
+        {children}
+      </div>
+    );
+  }
+
   return (
-    <div className="scroller">
-      <ul className="tag-list scroller-inner">
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.1 },
-        //   }}
-        ></motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Kilter Board
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Spray Wall
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Bouldering Walls
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Gym Area
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          <div className="tb2">
-            <div className="tag">
-              <p>Tension Board 2</p>
+    <div className="carousel">
+      <ul className="carousel-track">
+        <Items className="carousel-items">
+          {images.map((artwork, index) => (
+            <div className="artwork-container" key={index}>
+              <li className="artwork-item">
+                <img src={artwork} height={400} width={400}></img>
+              </li>
             </div>
-          </div>
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Kilter Board
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Spray Wall
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Bouldering Walls
-        </motion.li>
-        <motion.li
-        //   whileHover={{
-        //     scale: 1.2,
-        //     transition: { duration: 0.5 },
-        //   }}
-        >
-          Gym Area
-        </motion.li>
+          ))}
+        </Items>
+        <Items className="carousel-items">
+          {images.map((artwork) => (
+            <li className="artwork-item" key={artwork}>
+              <img src={artwork} height={400} width={400}></img>
+            </li>
+          ))}
+        </Items>
       </ul>
     </div>
   );
-};
-
-export default Facilities;
+}
