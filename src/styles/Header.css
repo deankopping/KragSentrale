@@ -26,7 +26,7 @@
 
   font-weight: 700;
 
-  color: bisque;
+  color: var(--offWhite);
 
   text-shadow: black 10;
   text-decoration: none;
