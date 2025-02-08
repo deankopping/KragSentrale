@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "./styles/PriceList.css";
 import { AnimatePresence, motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import TableComponent, { PassTypes } from "./PriceDetails";
 import ReactMarkdown from "react-markdown";
-import { details } from "motion/react-client";
 import { useMediaQuery } from "react-responsive";
 
 const priceList = [

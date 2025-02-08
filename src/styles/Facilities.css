@@ -22,6 +22,16 @@
   margin-block: 2em;
 }
 
+.carousel-track2 {
+  display: inline-flex;
+  justify-content: center;
+
+  animation: scroll2 50s linear infinite;
+  animation-play-state: running;
+  list-style: none;
+  margin-block: 2em;
+}
+
 .carousel-items {
   display: inline-flex;
   padding-left: 30px;

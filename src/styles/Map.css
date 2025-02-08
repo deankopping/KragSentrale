@@ -5,7 +5,10 @@
   flex-direction: column;
   gap: 1em;
 
-  background-color: var(--bkBrown);
+  background-image: url("../assets/bannerImage1.jpeg");
+
+  /* background-color: black; */
+  background-size: cover;
   z-index: -100;
   border-radius: 4em;
 
@@ -41,4 +44,38 @@
   color: white;
   display: flex;
   font-size: 5em;
+}
+@media (max-width: 450px) {
+  .adressDetails {
+    flex-direction: column;
+    align-items: center;
+    flex-flow: column-reverse;
+
+    h3 {
+      font-size: 1.5em;
+    }
+  }
+
+  .mapSection {
+    display: block;
+    margin-inline: 0em;
+    border-radius: 0%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    padding-left: 0%;
+    padding-right: 0%;
+    h2 {
+      font-size: 4em;
+      margin-bottom: 0.5em;
+    }
+  }
+  .mapContainer {
+    width: 90%;
+    height: 20em;
+  }
+
+  .adress {
+    font-size: 3em;
+  }
 }

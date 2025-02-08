@@ -36,20 +36,23 @@ function App() {
       <motion.div initial={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         <PageBreak />
       </motion.div>
+      <div id="prices">
+        <PriceList />
+      </div>
 
-      <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <PriceList />
-        </motion.div>
-      </AnimatePresence>
-      <Facilities artworks={["srdfgs", "dfgt"]} />
+      <div id="facilities">
+        <Facilities />
+      </div>
 
-      <motion.div initial={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+      <div id="location">
         <MapComponent />
-      </motion.div>
+      </div>
+
+      <div id="events">{/* Your events component here */}</div>
+
+      <div id="about">
+        <AboutUs />
+      </div>
 
       <CursorBlob />
       <Footer />
