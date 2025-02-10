@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swaps");
-
 @import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Protest+Strike&display=swap");
 
 :root {
@@ -35,7 +33,7 @@
 
     color: var(--colorOrange);
   }
-  @media (max-width: 450px) {
+  @media (max-width: 700px) {
     h2 {
       font-size: 3em;
     }
@@ -55,6 +53,9 @@
   100% {
     background-position: right;
   }
+}
+ul {
+  margin: 0%;
 }
 
 a {
@@ -115,8 +116,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 450px;
-  height: 450px;
+  width: 700px;
+  height: 700px;
   border-radius: 100%;
   background-image: linear-gradient(var(--colorOrange) 1%, #ffffff);
   filter: blur(250px);

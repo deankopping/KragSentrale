@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import Facilities from "./Facilities";
 import AboutUs from "./AboutUs";
+import PageWrapper from "./PageWrapper";
 
 function HomePage() {
   const { ref: homeBannerRef, inView: homeBannerView } = useInView({
@@ -19,41 +20,42 @@ function HomePage() {
   return (
     <>
       <Header />
+      <PageWrapper>
+        <motion.div
+          ref={homeBannerRef}
+          initial={{ opacity: 1 }}
+          animate={{
+            filter: homeBannerView ? "none" : "blur(1em)",
+          }}
+          transition={{ duration: 0.5 }}
+        >
+          <HomeBanner />
+        </motion.div>
 
-      <motion.div
-        ref={homeBannerRef}
-        initial={{ opacity: 1 }}
-        animate={{
-          filter: homeBannerView ? "none" : "blur(1em)",
-        }}
-        transition={{ duration: 0.5 }}
-      >
-        <HomeBanner />
-      </motion.div>
+        <motion.div initial={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+          <PageBreak />
+        </motion.div>
+        <div id="prices">
+          <PriceList />
+        </div>
 
-      <motion.div initial={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-        <PageBreak />
-      </motion.div>
-      <div id="prices">
-        <PriceList />
-      </div>
+        <div id="facilities">
+          <Facilities />
+        </div>
 
-      <div id="facilities">
-        <Facilities />
-      </div>
+        <div id="location">
+          <MapComponent />
+        </div>
 
-      <div id="location">
-        <MapComponent />
-      </div>
+        <div id="events">{/* Your events component here */}</div>
 
-      <div id="events">{/* Your events component here */}</div>
+        <div id="about">
+          <AboutUs />
+        </div>
 
-      <div id="about">
-        <AboutUs />
-      </div>
-
-      <CursorBlob />
-      <Footer />
+        <CursorBlob />
+        <Footer />
+      </PageWrapper>
     </>
   );
 }

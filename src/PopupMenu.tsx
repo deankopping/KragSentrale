@@ -2,13 +2,16 @@ import { AnimatePresence, motion } from "motion/react";
 
 import "./styles/PopUpMenu.css";
 import { useEffect, useState } from "react";
+import { MenuItem } from "./Header";
 
 const PopUpMenu = ({
   isOpen,
   setIsOpen,
+  menuItems,
 }: {
   isOpen: boolean;
   setIsOpen: (x: boolean) => void;
+  menuItems: MenuItem[];
 }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 400);
 
@@ -49,15 +52,6 @@ const PopUpMenu = ({
       }, 100);
     }
   };
-
-  const menuItems = [
-    { label: "HOME", id: "home" },
-    { label: "LOCATION", id: "location" },
-    { label: "FACILITIES", id: "facilities" },
-    { label: "PRICES", id: "prices" },
-    { label: "EVENTS", id: "events" },
-    { label: "ABOUT", id: "about" },
-  ];
 
   useEffect(() => {
     if (window.innerWidth <= 400) {

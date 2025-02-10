@@ -42,7 +42,7 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
   let description;
   let heading;
 
-  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
   switch (passType) {
     case PassTypes.sessionPass:
       headings = Object.keys(sessionPassData);

@@ -1,16 +1,13 @@
 .mapSection {
-  margin-inline: 2em;
-
   display: flex;
   flex-direction: column;
   gap: 1em;
 
-  background-image: url("../assets/bannerImage1.jpeg");
+  background-image: url("../../public/_DSC7948.jpg");
 
-  /* background-color: black; */
   background-size: cover;
   z-index: -100;
-  border-radius: 4em;
+  border-radius: 6em;
 
   align-items: center;
 
@@ -45,7 +42,7 @@
   display: flex;
   font-size: 5em;
 }
-@media (max-width: 450px) {
+@media (max-width: 700px) {
   .adressDetails {
     flex-direction: column;
     align-items: center;

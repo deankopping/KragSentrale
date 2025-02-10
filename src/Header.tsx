@@ -9,7 +9,7 @@ import { useMediaQuery } from "react-responsive";
 
 type Action = "scroll" | "link";
 
-interface MenuItem {
+export interface MenuItem {
   label: string;
   id: string;
   action: Action;
@@ -19,7 +19,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(window.innerWidth <= 768);
   const [isOpen, setOpen] = useState(false);
 
-  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +62,7 @@ const Header = () => {
   return (
     <>
       <AnimatePresence>
-        {!isScrolled && !isMobile && (
+        {!isScrolled && !isMobile && location.pathname === "/" && (
           <motion.div>
             <header className="container">
               <ul className="items">
@@ -96,7 +96,7 @@ const Header = () => {
       </AnimatePresence>
 
       <AnimatePresence>
-        {(isMobile || isScrolled) && (
+        {(isMobile || isScrolled || location.pathname != "/") && (
           <header className="container gradient-blur">
             <motion.div
               className="items"
@@ -182,7 +182,11 @@ const Header = () => {
                   duration={0.5}
                 />
               </motion.div>
-              <PopUpMenu isOpen={isOpen} setIsOpen={setOpen} />
+              <PopUpMenu
+                isOpen={isOpen}
+                setIsOpen={setOpen}
+                menuItems={menuItems}
+              />
             </motion.div>
           </header>
         )}{" "}

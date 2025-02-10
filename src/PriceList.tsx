@@ -34,7 +34,7 @@ The gym is open to day customers from **Tuesday to Thursday, 16:00 - 21:00**. Ou
 const PriceList = () => {
   const [clickedIndex, setClickedIndex] = useState<number>(0);
 
-  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   const { ref: priceListRef, inView: priceListView } = useInView({
     threshold: 0.5,

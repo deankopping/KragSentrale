@@ -1,6 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 import "./styles/MasonaryGrid.css";
 import Header from "./Header";
+import PageWrapper from "./PageWrapper";
 
 interface MasonryColumn {
   photo: string;
@@ -15,10 +16,9 @@ const imageFiles = import.meta.glob("/public/**/*.{jpg,jpeg,png}", {
 const photos = Object.values(imageFiles);
 
 export default function MasonryGrid() {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
   const columnCount = isMobile ? 2 : 3;
 
-  // Distribute photos across columns in round-robin fashion
   const columns: MasonryColumn[][] = Array.from(
     { length: columnCount },
     () => []
@@ -28,29 +28,33 @@ export default function MasonryGrid() {
     const columnIndex = index % columnCount;
     columns[columnIndex].push({
       photo: photo,
-      height: 500, // Default height maintained for consistency
+      height: 500,
     });
   });
 
   return (
     <div>
       <Header />
-      <div className="masonry-container">
-        <div className="masonry-grid">
-          {columns.map((column, columnIndex) => (
-            <div key={columnIndex} className="masonry-column">
-              {column.map((photo, imageIndex) => (
-                <img
-                  key={`${columnIndex}-${imageIndex}`}
-                  className="masonry-image"
-                  src={photo.photo}
-                  alt={`Image ${columnIndex * column.length + imageIndex + 1}`}
-                />
-              ))}
-            </div>
-          ))}
+      <PageWrapper>
+        <div className="masonry-container">
+          <div className="masonry-grid">
+            {columns.map((column, columnIndex) => (
+              <div key={columnIndex} className="masonry-column">
+                {column.map((photo, imageIndex) => (
+                  <img
+                    key={`${columnIndex}-${imageIndex}`}
+                    className="masonry-image"
+                    src={photo.photo}
+                    alt={`Image ${
+                      columnIndex * column.length + imageIndex + 1
+                    }`}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </PageWrapper>
     </div>
   );
 }
