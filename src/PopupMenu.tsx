@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from "motion/react";
 
 import "./styles/PopUpMenu.css";
 import { useEffect, useState } from "react";
-import { section } from "motion/react-client";
 
 const PopUpMenu = ({
   isOpen,

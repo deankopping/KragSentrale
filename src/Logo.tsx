@@ -1,4 +1,3 @@
-import { view } from "motion/react-client";
 import "./App.css";
 
 interface LogoProps {

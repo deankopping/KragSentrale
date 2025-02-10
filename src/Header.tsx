@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles/Header.css";
 import { Divide as Hamburger } from "hamburger-react";
@@ -192,57 +192,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// PopupMenu.tsx
-interface PopUpMenuProps {
-  isOpen: boolean;
-}
-
-// const PopUpMenu: React.FC<PopUpMenuProps> = ({ isOpen }) => {
-//   const scrollToSection = (sectionId: string) => {
-//     const element = document.getElementById(sectionId);
-//     if (element) {
-//       const headerOffset = 100;
-//       const elementPosition = element.getBoundingClientRect().top;
-//       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-//       window.scrollTo({
-//         top: offsetPosition,
-//         behavior: "smooth"
-//       });
-//     }
-//   };
-
-//   const menuItems = [
-//     { label: "LOCATION", id: "location" },
-//     { label: "FACILITIES", id: "facilities" },
-//     { label: "PRICES", id: "prices" },
-//     { label: "EVENTS", id: "events" },
-//     { label: "ABOUT", id: "about" }
-//   ];
-
-//   return (
-//     <AnimatePresence>
-//       {isOpen && (
-//         <motion.div
-//           className="popup-menu"
-//           initial={{ opacity: 0, y: -20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           exit={{ opacity: 0, y: -20 }}
-//         >
-//           {menuItems.map((item) => (
-//             <div
-//               key={item.id}
-//               onClick={() => scrollToSection(item.id)}
-//               className="popup-menu-item"
-//             >
-//               {item.label}
-//             </div>
-//           ))}
-//         </motion.div>
-//       )}
-//     </AnimatePresence>
-//   );
-// };
-
-// export default PopUpMenu;

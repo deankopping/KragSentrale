@@ -2,78 +2,36 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
-const DEFAULT_OPTIONS = {
-  test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,
+const OPTIONS = {
+  test: /\.(jpe?g|png)$/i,
   exclude: undefined,
   include: undefined,
   includePublic: true,
-  logStats: true,
-  ansiColors: true,
-  svg: {
-    multipass: true,
-    plugins: [
-      {
-        name: "preset-default",
-        params: {
-          overrides: {
-            cleanupNumericValues: false,
-            removeViewBox: false, // https://github.com/svg/svgo/issues/1128
-          },
-          cleanupIDs: {
-            minify: false,
-            remove: false,
-          },
-          convertPathData: false,
-        },
-      },
-      "sortAttrs",
-      {
-        name: "addAttributesToSVGElement",
-        params: {
-          attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
-        },
-      },
-    ],
-  },
+  logStats: false, // Disable in production
+  ansiColors: false, // Disable in production
+
   png: {
-    // https://sharp.pixelplumbing.com/api-output#png
-    quality: 100,
+    quality: 85, // Balanced quality for PNG
   },
   jpeg: {
-    // https://sharp.pixelplumbing.com/api-output#jpeg
-    quality: 100,
+    quality: 85, // Balanced quality for JPEG
   },
   jpg: {
-    // https://sharp.pixelplumbing.com/api-output#jpeg
-    quality: 100,
+    quality: 80, // Balanced quality for JPG
   },
   tiff: {
-    // https://sharp.pixelplumbing.com/api-output#tiff
-    quality: 100,
+    quality: 85, // Slightly reduced for TIFF
   },
-  // gif does not support lossless compression
-  // https://sharp.pixelplumbing.com/api-output#gif
-  gif: {},
-  webp: {
-    // https://sharp.pixelplumbing.com/api-output#webp
-    lossless: true,
-  },
-  avif: {
-    // https://sharp.pixelplumbing.com/api-output#avif
-    lossless: true,
-  },
-  cache: false,
-  cacheLocation: undefined,
-};
 
-// https://vite.dev/config/
+  webp: {
+    lossless: false, // Use lossy WebP for better compression
+    quality: 85, // Adjust quality for WebP
+  },
+
+  cache: true, // Enable caching
+  cacheLocation: "./node_modules/.cache/vite-plugin-image-optimizer", // Cache location
+};
 export default defineConfig({
   publicDir: "public",
-  plugins: [
-    react(),
-    ViteImageOptimizer({
-      ...DEFAULT_OPTIONS,
-      /* pass your config */
-    }),
-  ],
+  plugins: [react(), ViteImageOptimizer(OPTIONS)],
 });

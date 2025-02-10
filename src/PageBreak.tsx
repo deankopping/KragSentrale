@@ -1,4 +1,3 @@
-import { Logo } from "./Logo";
 import "./styles/PageBreak.css";
 
 const PageBreak = () => {

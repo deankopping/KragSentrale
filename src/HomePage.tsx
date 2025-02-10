@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./Header";
 import HomeBanner from "./HomeBanner";
-import { Logo } from "./Logo";
 import MapComponent from "./Map";
 import PriceList from "./PriceList";
 import Footer from "./Footer";
@@ -9,11 +8,8 @@ import CursorBlob from "./CursorBlob";
 import PageBreak from "./PageBreak";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { AnimatePresence } from "motion/react";
 import Facilities from "./Facilities";
 import AboutUs from "./AboutUs";
-import MasonryGrid from "./MasonaryGrid";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function HomePage() {
   const { ref: homeBannerRef, inView: homeBannerView } = useInView({
