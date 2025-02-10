@@ -7,6 +7,14 @@ import PopUpMenu from "./PopupMenu";
 import Socials from "./Socials";
 import { useMediaQuery } from "react-responsive";
 
+type Action = "scroll" | "link";
+
+interface MenuItem {
+  label: string;
+  id: string;
+  action: Action;
+}
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(window.innerWidth <= 768);
   const [isOpen, setOpen] = useState(false);
@@ -42,12 +50,13 @@ const Header = () => {
     }
   };
 
-  const menuItems = [
-    { label: "LOCATION", id: "location" },
-    { label: "FACILITIES", id: "facilities" },
-    { label: "PRICES", id: "prices" },
-    { label: "EVENTS", id: "events" },
-    { label: "ABOUT", id: "about" },
+  const menuItems: MenuItem[] = [
+    { label: "LOCATION", id: "location", action: "scroll" },
+    { label: "FACILITIES", id: "facilities", action: "scroll" },
+    { label: "PRICES", id: "prices", action: "scroll" },
+    { label: "EVENTS", id: "events", action: "scroll" },
+    { label: "ABOUT", id: "about", action: "scroll" },
+    { label: "GALLERY", action: "link", id: "gallery" },
   ];
 
   return (
@@ -69,7 +78,11 @@ const Header = () => {
                   {menuItems.map((item) => (
                     <li
                       key={item.id}
-                      onClick={() => scrollToSection(item.id)}
+                      onClick={() =>
+                        item.action === "scroll"
+                          ? scrollToSection(item.id)
+                          : (window.location.href = "/gallery")
+                      }
                       className="cursor-pointer hover:opacity-80"
                     >
                       {item.label}

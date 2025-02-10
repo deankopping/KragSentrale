@@ -67,7 +67,7 @@
 
 .entranceInfoContainer {
   margin-bottom: 1em;
-  background-image: url("../assets/bannerImage2.jpeg");
+  background-image: url("../animatedSliderPhotos/bannerImage2.jpeg");
   display: flex;
 
   flex-direction: column;

@@ -2,10 +2,13 @@ import "./styles/Facilities.css";
 
 import React from "react";
 
-const imageFiles = import.meta.glob("/public/**/*.{jpg,jpeg,png}", {
-  eager: true,
-  as: "url",
-});
+const imageFiles = import.meta.glob(
+  "/src/animatedSliderPhotos/**/*.{jpg,jpeg,png}",
+  {
+    eager: true,
+    as: "url",
+  }
+);
 
 const images = Object.values(imageFiles);
 
