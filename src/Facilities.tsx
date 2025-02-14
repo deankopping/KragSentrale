@@ -31,18 +31,14 @@ export default function Facilities() {
           {images.map((artwork, index) => (
             <div className="artwork-container" key={index}>
               <li className="artwork-item">
-                <img src={artwork} height={400} width={400}></img>
+                <picture>
+                  <source srcSet={`${artwork} 400w`}></source>
+                  <img src={artwork} height={400} width={400}></img>
+                </picture>
               </li>
             </div>
           ))}
         </Items>
-        {/* <Items className="carousel-items">
-          {images.map((artwork) => (
-            <li className="artwork-item" key={artwork}>
-              <img src={artwork} height={400} width={400}></img>
-            </li>
-          ))}
-        </Items> */}
       </ul>
     </div>
   );

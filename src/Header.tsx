@@ -52,7 +52,6 @@ const Header = () => {
 
   const menuItems: MenuItem[] = [
     { label: "LOCATION", id: "location", action: "scroll" },
-
     { label: "ENTRANCE", id: "prices", action: "scroll" },
     { label: "EVENTS", id: "events", action: "scroll" },
     { label: "ABOUT", id: "about", action: "scroll" },
@@ -81,7 +80,7 @@ const Header = () => {
                       onClick={() =>
                         item.action === "scroll"
                           ? scrollToSection(item.id)
-                          : (window.location.href = "/gallery")
+                          : (window.location.href = `/${item.id}`)
                       }
                       className="cursor-pointer hover:opacity-80"
                     >
@@ -185,7 +184,10 @@ const Header = () => {
               <PopUpMenu
                 isOpen={isOpen}
                 setIsOpen={setOpen}
-                menuItems={menuItems}
+                menuItems={[
+                  { label: "HOME", id: "", action: "link" },
+                  ...menuItems,
+                ]}
               />
             </motion.div>
           </header>

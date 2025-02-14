@@ -64,7 +64,7 @@
 }
 
 .entranceInfoContainer {
-  background-image: url("../animatedSliderPhotos/bannerImage2.jpg");
+  background-image: url("../../public/bannerImage2.jpg");
 
   display: flex;
 
