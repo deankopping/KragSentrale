@@ -40,6 +40,7 @@ const PopUpMenu = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          style={{ marginTop: isMobile ? "-2em" : "" }}
           className="popUpMenu"
           initial={{ width: 0, height: 0, scale: 0 }}
           exit={{ width: 0, height: 0, scale: 0 }}
