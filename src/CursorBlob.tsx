@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css"; // Optional: if you want to keep the styles separate
 
 const CursorBlob = () => {

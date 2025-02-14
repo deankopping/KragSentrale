@@ -5,10 +5,8 @@
   height: 100%;
 
   margin-bottom: 2em;
-
   justify-content: center;
   align-items: start;
-
   margin-top: 2em;
 }
 
@@ -66,8 +64,8 @@
 }
 
 .entranceInfoContainer {
-  margin-bottom: 1em;
-  background-image: url("../assets/bannerImage2.jpeg");
+  background-image: url("../../public/bannerImage2.jpg");
+
   display: flex;
 
   flex-direction: column;
@@ -76,7 +74,6 @@
 
   font-family: "Oswald", serif;
   font-weight: bold;
-  margin-inline: 2em;
 
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   padding-top: 2rem;
@@ -84,7 +81,7 @@
   height: 90vh;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
   .title {
     visibility: hidden;
     display: none;
@@ -103,7 +100,6 @@
   }
 
   .details {
-    /* height: max-content; */
     width: 90%;
     margin: 0;
     padding: 0.5em;

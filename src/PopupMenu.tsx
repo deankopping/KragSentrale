@@ -2,63 +2,33 @@ import { AnimatePresence, motion } from "motion/react";
 
 import "./styles/PopUpMenu.css";
 import { useEffect, useState } from "react";
-import { section } from "motion/react-client";
+import { MenuItem } from "./Header";
+import { Router } from "react-router-dom";
 
 const PopUpMenu = ({
   isOpen,
-  setIsOpen,
+  menuItems,
 }: {
   isOpen: boolean;
   setIsOpen: (x: boolean) => void;
+  menuItems: MenuItem[];
 }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 400);
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === "home") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 20; // Adjust this value based on your header height
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - headerOffset;
 
-      // Start scroll
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
-
-      // Listen for scroll end and then close menu
-      const checkScrollEnd = setInterval(() => {
-        // Check if we've reached our target position (with some margin of error)
-        if (Math.abs(window.pageYOffset - offsetPosition) < 10) {
-          clearInterval(checkScrollEnd);
-          setIsOpen(false);
-        }
-      }, 100);
-
-      // Fallback to ensure menu eventually closes
-      setTimeout(() => {
-        clearInterval(checkScrollEnd);
-        setIsOpen(false);
-      }, 100);
     }
   };
-
-  const menuItems = [
-    { label: "HOME", id: "home" },
-    { label: "LOCATION", id: "location" },
-    { label: "FACILITIES", id: "facilities" },
-    { label: "PRICES", id: "prices" },
-    { label: "EVENTS", id: "events" },
-    { label: "ABOUT", id: "about" },
-  ];
 
   useEffect(() => {
     if (window.innerWidth <= 400) {
@@ -88,7 +58,9 @@ const PopUpMenu = ({
               <h4
                 className="popUpMenuItem"
                 onClick={() => {
-                  scrollToSection(item.id);
+                  item.action === "scroll"
+                    ? scrollToSection(item.id)
+                    : (window.location.href = `/${item.id}`);
                 }}
               >
                 {item.label}

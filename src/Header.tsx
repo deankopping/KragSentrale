@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles/Header.css";
 import { Divide as Hamburger } from "hamburger-react";
@@ -7,11 +7,19 @@ import PopUpMenu from "./PopupMenu";
 import Socials from "./Socials";
 import { useMediaQuery } from "react-responsive";
 
+type Action = "scroll" | "link";
+
+export interface MenuItem {
+  label: string;
+  id: string;
+  action: Action;
+}
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(window.innerWidth <= 768);
   const [isOpen, setOpen] = useState(false);
 
-  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,18 +50,18 @@ const Header = () => {
     }
   };
 
-  const menuItems = [
-    { label: "LOCATION", id: "location" },
-    { label: "FACILITIES", id: "facilities" },
-    { label: "PRICES", id: "prices" },
-    { label: "EVENTS", id: "events" },
-    { label: "ABOUT", id: "about" },
+  const menuItems: MenuItem[] = [
+    { label: "LOCATION", id: "location", action: "scroll" },
+    { label: "ENTRANCE", id: "prices", action: "scroll" },
+    { label: "EVENTS", id: "events", action: "scroll" },
+    { label: "ABOUT", id: "about", action: "scroll" },
+    { label: "GALLERY", action: "link", id: "gallery" },
   ];
 
   return (
     <>
       <AnimatePresence>
-        {!isScrolled && !isMobile && (
+        {!isScrolled && !isMobile && location.pathname === "/" && (
           <motion.div>
             <header className="container">
               <ul className="items">
@@ -69,7 +77,11 @@ const Header = () => {
                   {menuItems.map((item) => (
                     <li
                       key={item.id}
-                      onClick={() => scrollToSection(item.id)}
+                      onClick={() =>
+                        item.action === "scroll"
+                          ? scrollToSection(item.id)
+                          : (window.location.href = `/${item.id}`)
+                      }
                       className="cursor-pointer hover:opacity-80"
                     >
                       {item.label}
@@ -83,7 +95,7 @@ const Header = () => {
       </AnimatePresence>
 
       <AnimatePresence>
-        {(isMobile || isScrolled) && (
+        {(isMobile || isScrolled || location.pathname != "/") && (
           <header className="container gradient-blur">
             <motion.div
               className="items"
@@ -169,7 +181,14 @@ const Header = () => {
                   duration={0.5}
                 />
               </motion.div>
-              <PopUpMenu isOpen={isOpen} setIsOpen={setOpen} />
+              <PopUpMenu
+                isOpen={isOpen}
+                setIsOpen={setOpen}
+                menuItems={[
+                  { label: "HOME", id: "", action: "link" },
+                  ...menuItems,
+                ]}
+              />
             </motion.div>
           </header>
         )}{" "}
@@ -179,57 +198,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// PopupMenu.tsx
-interface PopUpMenuProps {
-  isOpen: boolean;
-}
-
-// const PopUpMenu: React.FC<PopUpMenuProps> = ({ isOpen }) => {
-//   const scrollToSection = (sectionId: string) => {
-//     const element = document.getElementById(sectionId);
-//     if (element) {
-//       const headerOffset = 100;
-//       const elementPosition = element.getBoundingClientRect().top;
-//       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-//       window.scrollTo({
-//         top: offsetPosition,
-//         behavior: "smooth"
-//       });
-//     }
-//   };
-
-//   const menuItems = [
-//     { label: "LOCATION", id: "location" },
-//     { label: "FACILITIES", id: "facilities" },
-//     { label: "PRICES", id: "prices" },
-//     { label: "EVENTS", id: "events" },
-//     { label: "ABOUT", id: "about" }
-//   ];
-
-//   return (
-//     <AnimatePresence>
-//       {isOpen && (
-//         <motion.div
-//           className="popup-menu"
-//           initial={{ opacity: 0, y: -20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           exit={{ opacity: 0, y: -20 }}
-//         >
-//           {menuItems.map((item) => (
-//             <div
-//               key={item.id}
-//               onClick={() => scrollToSection(item.id)}
-//               className="popup-menu-item"
-//             >
-//               {item.label}
-//             </div>
-//           ))}
-//         </motion.div>
-//       )}
-//     </AnimatePresence>
-//   );
-// };
-
-// export default PopUpMenu;

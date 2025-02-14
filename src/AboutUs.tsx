@@ -2,6 +2,7 @@ import "./styles/AboutUs.css";
 const AboutUs = () => {
   return (
     <div className="aboutContainer">
+      <h2>ABOUT KRAG SENTRALE</h2>
       <p>
         attempt to gain access if someone is available to let them in. In such
         cases, we operate on an *honesty system* for payment. CCTV cameras are

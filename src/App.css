@@ -26,7 +26,6 @@
 }
 
 .logo:hover {
-  /* fill: #e1381b; */
   fill: black;
   pointer-events: all;
   cursor: pointer;

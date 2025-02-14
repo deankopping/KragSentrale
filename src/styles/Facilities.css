@@ -1,5 +1,4 @@
 .carousel {
-  margin-bottom: 0.5rem;
   animation: scroll 50s linear infinite;
   animation-play-state: paused;
 }
@@ -19,17 +18,6 @@
   animation: scroll 50s linear infinite;
   animation-play-state: running;
   list-style: none;
-  margin-block: 2em;
-}
-
-.carousel-track2 {
-  display: inline-flex;
-  justify-content: center;
-
-  animation: scroll2 50s linear infinite;
-  animation-play-state: running;
-  list-style: none;
-  margin-block: 2em;
 }
 
 .carousel-items {
