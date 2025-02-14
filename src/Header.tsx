@@ -52,8 +52,8 @@ const Header = () => {
 
   const menuItems: MenuItem[] = [
     { label: "LOCATION", id: "location", action: "scroll" },
-    { label: "FACILITIES", id: "facilities", action: "scroll" },
-    { label: "PRICES", id: "prices", action: "scroll" },
+
+    { label: "ENTRANCE", id: "prices", action: "scroll" },
     { label: "EVENTS", id: "events", action: "scroll" },
     { label: "ABOUT", id: "about", action: "scroll" },
     { label: "GALLERY", action: "link", id: "gallery" },

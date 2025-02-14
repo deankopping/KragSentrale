@@ -36,13 +36,13 @@ export default function Facilities() {
             </div>
           ))}
         </Items>
-        <Items className="carousel-items">
+        {/* <Items className="carousel-items">
           {images.map((artwork) => (
             <li className="artwork-item" key={artwork}>
               <img src={artwork} height={400} width={400}></img>
             </li>
           ))}
-        </Items>
+        </Items> */}
       </ul>
     </div>
   );

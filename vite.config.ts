@@ -11,13 +11,13 @@ const OPTIONS = {
   ansiColors: false, // Disable in production
 
   png: {
-    quality: 85, // Balanced quality for PNG
+    quality: 70, // Balanced quality for PNG
   },
   jpeg: {
-    quality: 85, // Balanced quality for JPEG
+    quality: 70, // Balanced quality for JPEG
   },
   jpg: {
-    quality: 80, // Balanced quality for JPG
+    quality: 70, // Balanced quality for JPG
   },
   tiff: {
     quality: 85, // Slightly reduced for TIFF

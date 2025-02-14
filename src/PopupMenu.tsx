@@ -48,7 +48,7 @@ const PopUpMenu = ({
       // Fallback to ensure menu eventually closes
       setTimeout(() => {
         clearInterval(checkScrollEnd);
-        setIsOpen(false);
+        // setIsOpen(false);
       }, 100);
     }
   };
