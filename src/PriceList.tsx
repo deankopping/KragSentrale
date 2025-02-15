@@ -48,7 +48,7 @@ const PriceList = () => {
         <div className="contentContainer">
           <div className="priceListContainer">
             {priceList.map((item, index) => (
-              <AnimatePresence>
+              <AnimatePresence key={index}>
                 <motion.div
                   style={{
                     backgroundColor: index === clickedIndex ? "#e1381b" : "",
@@ -56,11 +56,8 @@ const PriceList = () => {
                   }}
                   className="priceListCard"
                   key={index}
-                  // exit={{ opacity: 0, scale: 0 }}
-                  // initial={{ opacity: 1, scale: 0.95 }}
                   animate={{
                     translateY: isMobile ? 0 : priceListView ? index * 100 : 0,
-                    // translateX: !isMobile ? 0 : priceListView ? index * 95 : 0,
                     transition: { delay: 1, duration: 1 },
                   }}
                   onClick={() => {

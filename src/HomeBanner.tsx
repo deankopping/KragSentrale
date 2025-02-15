@@ -2,6 +2,7 @@ import "./index.css";
 import "./styles/HomeBanner.css";
 import AboutUs from "./AboutUs";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 
 const HomeBanner = () => {
   const bannerRef = useRef(null);
@@ -51,10 +52,15 @@ const HomeBanner = () => {
           }}
         />
         <div className="homeBannerText">
-          <div className="mainHeading">
+          <motion.div
+            className="mainHeading"
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 2 }}
+          >
             <h1 className="krag">KRAG</h1>
             <h1 className="sentrale">SENTRALE</h1>
-          </div>
+          </motion.div>
 
           <div className="aboutUs">
             <AboutUs />

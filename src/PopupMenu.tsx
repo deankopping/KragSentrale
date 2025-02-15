@@ -54,9 +54,10 @@ const PopUpMenu = ({
             duration: 0.5,
           }}
         >
-          {menuItems.map((item) => {
+          {menuItems.map((item, index) => {
             return (
               <h4
+                key={index}
                 className="popUpMenuItem"
                 onClick={() => {
                   item.action === "scroll"
