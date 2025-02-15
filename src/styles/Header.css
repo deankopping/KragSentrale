@@ -4,41 +4,43 @@
 .container {
   width: 100vw;
   position: fixed;
-
   top: 0em;
-  /* padding-top: 1em; */
-
   left: 0;
   z-index: 9999;
+  padding-top: 0.5em;
 }
 
 .items {
   margin: 0%;
   display: flex;
-
   flex-direction: row;
-
   list-style: none;
   height: 6em;
-
-  align-items: center;
-
   font-weight: 700;
-
   color: var(--offWhite);
-
   text-shadow: black 10;
   text-decoration: none;
   font-size: 1.3vw;
-
   justify-content: space-between;
-
   font-family: "Protest Strike";
 
-  margin-right: 2em;
-  margin-left: 1em;
+  position: relative;
+  align-items: center;
+
+  padding-inline: 2.5em;
 }
 
+.svgFists {
+  display: flex;
+  gap: 0.3em;
+}
+
+.popupMenuContainer {
+  position: absolute;
+  right: 4em;
+  right: 2.5em;
+  top: calc(50% - 27.5px - 0.5em);
+}
 .hamburgerMenuIcon {
   cursor: pointer;
 
@@ -56,7 +58,10 @@
   position: relative;
   overflow: hidden;
   transition: background-color 0.2s ease-in-out;
-  margin-right: 1em;
+
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
 }
 
 .hamburgerMenuIcon::before {
@@ -84,32 +89,33 @@ li:hover {
   transition: color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .hamburgerMenuIcon {
-    margin-top: 3em;
-  }
-}
-
 .menuItems {
   display: flex;
   flex-direction: row;
 
-  li {
-    padding-right: 2em;
-
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
+  gap: 2em;
 }
 
 @media (max-width: 700px) {
   .container {
-    padding-top: 2.5em;
+    padding-top: 2em;
     height: 10vh;
     position: fixed;
     top: 0em;
   }
-  .items {
-    align-items: end;
-    margin-top: 3em;
+  .popupMenuContainer {
+    right: 1.5em;
   }
+
+  .hamburgerMenuIcon {
+    top: 1em;
+    right: 1em;
+  }
+}
+
+.instagram {
+  border: none;
+  height: 45px;
+  background-color: transparent;
+  z-index: 10;
 }
