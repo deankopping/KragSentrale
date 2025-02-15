@@ -72,10 +72,6 @@ path {
   .sentrale {
     font-size: 5em;
   }
-  .homeBannerContainer {
-    align-items: start;
-    height: fit-content;
-  }
 
   .homeBannerText {
     text-align: left;
