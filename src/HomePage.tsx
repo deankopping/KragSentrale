@@ -42,8 +42,8 @@ function HomePage() {
         </div>
 
         <CursorBlob />
-        <Footer />
-      </PageWrapper>
+      </PageWrapper>{" "}
+      <Footer />
     </>
   );
 }
