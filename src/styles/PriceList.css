@@ -1,12 +1,14 @@
 .contentContainer {
   display: flex;
+  gap: 2em;
 
   width: 100%;
   height: 100%;
+  min-height: 25em;
 
   margin-bottom: 2em;
   justify-content: center;
-  align-items: start;
+
   margin-top: 2em;
 }
 
@@ -14,7 +16,10 @@
   display: flex;
   position: relative;
 
+  height: 25em;
+
   width: 30%;
+  z-index: 1000;
 }
 
 .react-markdown {
@@ -30,9 +35,6 @@
   background-color: var(--offWhite);
   width: 60%;
 
-  margin-left: 1em;
-  height: 100%;
-
   border-radius: 4em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 
@@ -41,7 +43,8 @@
 
   padding-inline: 2em;
   text-align: left;
-  margin-left: 2em;
+
+  z-index: 100;
 }
 
 .priceListCard {
@@ -59,13 +62,16 @@
   border-radius: 30px;
   position: absolute;
 
-  justify-content: space-between;
+  /* justify-content: space-between; */
   cursor: pointer;
   justify-content: center;
 }
 
-.entranceInfoContainer {
-  background-image: url("../../public/bannerImage2.jpg");
+/* .entranceInfoContainer {
+  background-image: url("../../public/_DSC8254.jpg");
+  background-size: cover;
+  background-position: 10%;
+  position: relative;
 
   display: flex;
 
@@ -80,12 +86,36 @@
   padding-top: 2rem;
 
   height: 90vh;
+
+  h2 {
+    z-index: 100;
+  }
 }
+
+.entranceInfoContainer::before {
+  content: "";
+  position: absolute;
+  border-radius: 4em;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 2;
+} */
 
 @media (max-width: 700px) {
   .title {
     visibility: hidden;
     display: none;
+  }
+  /* .entranceInfoContainer::before {
+    border-radius: 0%;
   }
   .entranceInfoContainer {
     background-color: transparent;
@@ -98,10 +128,10 @@
     padding-right: 0.5em;
 
     gap: 1em;
-  }
+  } */
 
   .details {
-    width: 90%;
+    width: 95%;
     margin: 0;
     padding: 0.5em;
     text-align: center;
@@ -122,10 +152,8 @@
   .contentContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 0;
     justify-content: start;
-
-    gap: 1em;
+    gap: 0.5em;
   }
 
   .react-markdown {
@@ -133,10 +161,9 @@
   }
 
   .priceListContainer {
-    display: flex;
-    position: relative;
     justify-content: space-between;
     gap: 0.5em;
     width: 100%;
+    height: auto;
   }
 }

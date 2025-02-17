@@ -3,7 +3,7 @@
   align-items: flex-end;
 
   width: 100%;
-  height: 95vh;
+  height: 96vh;
 
   background-image: url("../../public/bannerImage2.jpg");
   background-size: 100%;
@@ -133,5 +133,8 @@ path {
   }
   .sentrale {
     font-size: 16em;
+  }
+  .homeBannerText {
+    padding-bottom: 1em;
   }
 }

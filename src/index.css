@@ -7,16 +7,13 @@
   background-size: 300%;
   animation: bg-animation 4s infinite alternate;
 
-  /* background-color: var(--offWhite); */
   background-color: #e1dddb;
 
   --offWhite: rgb(248, 242, 233);
-
   --colorOrange: #e1381b;
-
   --bkBrown: rgb(80, 35, 20);
   overflow-x: hidden;
-  /* color: rgb(79, 66, 66); */
+
   color: rgb(80, 35, 20);
 
   h2 {
@@ -33,7 +30,64 @@
 
     color: var(--colorOrange);
   }
+
+  .sectionContainer {
+    background-image: url("../../public/_DSC8254.jpg");
+    background-size: cover;
+    background-position: 10%;
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 4em;
+
+    font-family: "Oswald", serif;
+    font-weight: bold;
+
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    /* z-index: -2; */
+    /* height: 90vh; */
+
+    h2 {
+      z-index: 100;
+    }
+  }
+
+  .sectionContainer::before {
+    content: "";
+    position: absolute;
+    border-radius: 4em;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    );
+    z-index: 2;
+  }
   @media (max-width: 700px) {
+    .sectionContainer {
+      box-shadow: none;
+      border-radius: 0;
+
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-block: 0em;
+
+      /* /* gap: 1em; */
+      /* border-radius: 0%; */
+    }
+
+    .sectionContainer::before {
+      border-radius: 0%;
+    }
     h2 {
       font-size: 3em;
     }
@@ -56,60 +110,11 @@
 }
 ul {
   margin: 0%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  padding: 0%;
 }
 
 body {
   margin: 0;
-  display: flex;
-}
-
-.mapLayoutContainer {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.mapContainer {
-  position: relative;
-  width: 50%;
-  border-radius: 25px;
-}
-
-@media (max-width: 768px) {
-  .priceListItem {
-    width: 90%;
-  }
-  .priceListContainer {
-    width: 100%;
-  }
-  .mapContainer {
-    width: 90%;
-  }
-  .priceListDetails {
-    width: 90%;
-  }
-  :root {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-h2 {
-  font-family: "Nunito Sans";
-  font-size: small;
-  color: var(--colorOrange);
-  font-weight: 700;
-  font-size: 4em;
-  line-height: 1;
 }
 
 .blob {
@@ -129,30 +134,4 @@ h2 {
   transform: translate(calc(-50% + 15px), -50%);
   z-index: -1000;
   opacity: 100%;
-}
-
-.sectionHeaders path {
-  fill: transparent;
-  stroke: var(--colorOrange);
-
-  stroke-width: 0.2;
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
-  animation: textAnimation 0.7s ease-in-out 1 forwards;
-}
-
-@keyframes textAnimation {
-  0% {
-    stroke-dashoffset: 50;
-  }
-
-  70% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: var(--colorOrange);
-    opacity: 100%;
-    stroke-dashoffset: 0;
-  }
 }

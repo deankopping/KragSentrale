@@ -43,36 +43,36 @@ const PriceList = () => {
 
   return (
     <div ref={priceListRef}>
-      <div className="entranceInfoContainer">
+      <div className="sectionContainer" style={{ height: "85vh" }}>
         <h2 className="title">CLIMBING AT KRAG SENTRALE</h2>
         <div className="contentContainer">
           <div className="priceListContainer">
             {priceList.map((item, index) => (
-              <AnimatePresence key={index}>
-                <motion.div
-                  style={{
-                    backgroundColor: index === clickedIndex ? "#e1381b" : "",
-                    color: index === clickedIndex ? "white" : "",
-                  }}
-                  className="priceListCard"
-                  key={index}
-                  animate={{
-                    translateY: isMobile ? 0 : priceListView ? index * 100 : 0,
-                    transition: { delay: 1, duration: 1 },
-                  }}
-                  onClick={() => {
-                    setClickedIndex(index);
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                  }}
-                  whileTap={{ scale: 1.1 }}
-                >
-                  <h4 style={{ fontSize: isMobile ? "0.9em" : "2em" }}>
-                    {item.item}
-                  </h4>
-                </motion.div>
-              </AnimatePresence>
+              // <AnimatePresence key={index}>
+              <motion.div
+                style={{
+                  backgroundColor: index === clickedIndex ? "#e1381b" : "",
+                  color: index === clickedIndex ? "white" : "",
+                }}
+                className="priceListCard"
+                key={index}
+                animate={{
+                  translateY: isMobile ? 0 : priceListView ? index * 100 : 0,
+                  transition: { delay: 1, duration: 1 },
+                }}
+                onClick={() => {
+                  setClickedIndex(index);
+                }}
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 1.1 }}
+              >
+                <h4 style={{ fontSize: isMobile ? "0.9em" : "2em" }}>
+                  {item.item}
+                </h4>
+              </motion.div>
+              // </AnimatePresence>
             ))}
           </div>
           <div className="details">
@@ -100,7 +100,7 @@ const PriceList = () => {
                 <>{priceList[clickedIndex].details}</>
               )}
             </div>
-          </div>
+          </div>{" "}
         </div>
       </div>
     </div>

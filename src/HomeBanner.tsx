@@ -3,6 +3,7 @@ import "./styles/HomeBanner.css";
 import AboutUs from "./AboutUs";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import { Typewriter } from "./typewriter";
 
 const HomeBanner = () => {
   const bannerRef = useRef(null);
@@ -48,18 +49,34 @@ const HomeBanner = () => {
             WebkitBackdropFilter: `blur(${blurAmount}px)`,
             pointerEvents: "none",
             transition: "backdrop-filter 0.2s ease-out",
+            borderRadius: "2em",
             zIndex: 100,
           }}
         />
         <div className="homeBannerText">
           <motion.div
             className="mainHeading"
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 2 }}
+            // initial={{ y: "100%", opacity: 0 }}
+            // animate={{ y: 0, opacity: 1 }}
+            // transition={{ ease: "easeOut", duration: 2 }}
           >
-            <h1 className="krag">KRAG</h1>
-            <h1 className="sentrale">SENTRALE</h1>
+            <motion.h1
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ ease: "easeOut", duration: 2 }}
+              className="krag"
+            >
+              KRAG
+            </motion.h1>
+
+            <motion.h1
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ ease: "easeOut", duration: 2 }}
+              className="sentrale"
+            >
+              SENTRALE
+            </motion.h1>
           </motion.div>
 
           <div className="aboutUs">
