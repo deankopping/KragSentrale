@@ -9,6 +9,8 @@
     background-position: center;
     padding-block: 1em;
 
+    height: 85vh;
+
     p {
       font-family: "Oswald", serif;
       color: white;
@@ -32,6 +34,10 @@
   }
 }
 
+.aboutContent {
+  display: flex;
+  gap: 1em;
+}
 .aboutContainer {
   padding-inline: 1em;
   border-radius: 6em;

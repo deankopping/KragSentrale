@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import AnimatedImageSlider from "./components/ImageCarousel/AnimatedImageSlider";
 import AboutUs from "./components/AboutUs";
 import PageWrapper from "./PageWrapper";
+import Faq from "./components/Faq";
 
 function HomePage() {
   return (
@@ -40,7 +41,7 @@ function HomePage() {
         <div id="about">
           <AboutUs />
         </div>
-
+        <Faq></Faq>
         <CursorBlob />
       </PageWrapper>{" "}
       <Footer />

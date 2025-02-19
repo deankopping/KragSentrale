@@ -72,7 +72,7 @@ footer {
 
   display: inline-block;
   cursor: pointer;
-  line-height: 0.8; /* This helps control the vertical positioning */
+  line-height: 0.8;
 }
 
 @media (min-width: 1800px) {
