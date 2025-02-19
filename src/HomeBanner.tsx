@@ -1,6 +1,6 @@
 import "./index.css";
 import "./styles/HomeBanner.css";
-import AboutUs from "./AboutUs";
+import AboutUs from "./components/AboutUs";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Typewriter } from "./typewriter";

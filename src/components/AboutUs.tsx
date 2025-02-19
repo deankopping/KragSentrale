@@ -1,5 +1,5 @@
-import "./styles/AboutUs.css";
-import { Typewriter } from "./typewriter";
+import "../styles/AboutUs.css";
+import { Typewriter } from "./typewriter.tsx";
 const AboutUs = () => {
   return (
     <div className="aboutContainer">

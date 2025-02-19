@@ -13,7 +13,10 @@ const MapComponent = () => {
     <div>
       <div
         className="sectionContainer"
-        style={{ backgroundImage: "url(../../public/_DSC7948.jpg)" }}
+        style={{
+          backgroundImage: "url(../../public/_DSC7948.jpg)",
+          maxHeight: "85vh",
+        }}
       >
         <h2>WHERE TO FIND US</h2>
         <div className="adressDetails">

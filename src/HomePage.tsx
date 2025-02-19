@@ -3,12 +3,12 @@ import Header from "./Header";
 import HomeBanner from "./HomeBanner";
 import MapComponent from "./Map";
 import PriceList from "./PriceList";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 import CursorBlob from "./CursorBlob";
 import PageBreak from "./PageBreak";
 import { motion } from "framer-motion";
-import Facilities from "./Facilities";
-import AboutUs from "./AboutUs";
+import AnimatedImageSlider from "./components/ImageCarousel/AnimatedImageSlider";
+import AboutUs from "./components/AboutUs";
 import PageWrapper from "./PageWrapper";
 
 function HomePage() {
@@ -27,8 +27,8 @@ function HomePage() {
           <PriceList />
         </div>
 
-        <div id="facilities">
-          <Facilities />
+        <div id="AnimatedImageSlider">
+          <AnimatedImageSlider />
         </div>
 
         <div id="location">

@@ -1,10 +1,10 @@
 import { useMediaQuery } from "react-responsive";
-import "./styles/Facilities.css";
+import "../../styles/AnimatedImageSlider.css";
 
 import React from "react";
 
 const imageFiles = import.meta.glob(
-  "/src/animatedSliderPhotos/**/*.{jpg,jpeg,png}",
+  "./animatedSliderPhotos/**/*.{jpg,jpeg,png}",
   {
     eager: true,
     as: "url",
@@ -15,7 +15,7 @@ const images = Object.values(imageFiles);
 
 export type ItemProps = React.ButtonHTMLAttributes<HTMLDivElement>;
 
-export default function Facilities() {
+export default function AnimatedImageSlider() {
   const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
   function Items({ children, ...props }: ItemProps) {
     return (

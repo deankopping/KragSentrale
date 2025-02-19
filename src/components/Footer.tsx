@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
-import "./styles/Footer.css";
+import "../styles/Footer.css";
 import { useMediaQuery } from "react-responsive";
 
 const Footer = () => {
@@ -37,6 +37,29 @@ const Footer = () => {
 
   return (
     <footer className="footer" ref={ref}>
+      <motion.div className="footer-top-text-container">
+        <div className="footerTextGroup">
+          <motion.h1>CONTACT US</motion.h1>
+          <a href="mailto:kragSentrale@gmail.com" className="footerTextItem">
+            kragSentrale@gmail.com
+          </a>
+          <a href="tel:0842635734" className="footerTextItem">
+            0842635734
+          </a>
+        </div>
+        <div className="footerTextGroup">
+          <motion.h1>FOLLOW US</motion.h1>
+          <a href="" className="footerTextItem">
+            Instagram
+          </a>
+        </div>
+        <div className="footerTextGroup">
+          <motion.h1>CONTACT US</motion.h1>
+          <a href="mailto:kragSentrale@gmail.com" className="footerTextItem">
+            kragSentrale@gmail.com
+          </a>
+        </div>
+      </motion.div>
       <motion.div
         className="footer-text-container"
         variants={containerVariants}
