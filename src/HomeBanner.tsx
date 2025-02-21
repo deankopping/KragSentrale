@@ -3,7 +3,7 @@ import "./styles/HomeBanner.css";
 import AboutUs from "./components/AboutUs";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Typewriter } from "./typewriter";
+import { Typewriter } from "./components/typewriter";
 
 const HomeBanner = () => {
   const bannerRef = useRef(null);
@@ -54,12 +54,7 @@ const HomeBanner = () => {
           }}
         />
         <div className="homeBannerText">
-          <motion.div
-            className="mainHeading"
-            // initial={{ y: "100%", opacity: 0 }}
-            // animate={{ y: 0, opacity: 1 }}
-            // transition={{ ease: "easeOut", duration: 2 }}
-          >
+          <motion.div className="mainHeading">
             <motion.h1
               initial={{ x: "100%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

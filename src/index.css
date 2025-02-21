@@ -72,6 +72,7 @@
     );
     z-index: 2;
   }
+
   @media (max-width: 700px) {
     .sectionContainer {
       box-shadow: none;
@@ -89,6 +90,7 @@
     .sectionContainer::before {
       border-radius: 0%;
     }
+
     h2 {
       font-size: 3em;
     }

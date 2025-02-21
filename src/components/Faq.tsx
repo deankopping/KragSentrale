@@ -39,13 +39,13 @@ const Faq = () => {
 
   return (
     <div className="sectionContainer">
-      <div className="faq-header">
-        <h2 className="faq-title">
-          Frequently asked
-          <br />
-          <span className="gradient-text">questions</span>
-        </h2>
-      </div>
+      {/* <div className="faq-header"> */}
+      <h2 className="faq-title">
+        Frequently asked
+        <br />
+        <span className="gradient-text">questions</span>
+      </h2>
+      {/* </div> */}
 
       <div className="faq-items">
         {faqItems.map((item, index) => (
@@ -59,7 +59,8 @@ const Faq = () => {
               <span>{item.question}</span>
               <motion.span
                 className="faq-icon"
-                animate={{ rotate: activeIndex === index ? 45 : 0 }}
+                animate={{ rotate: activeIndex === index ? 180 : 0 }}
+                transition={{ duration: 0.5 }}
               >
                 {activeIndex === index ? "−" : "+"}
               </motion.span>
@@ -74,7 +75,7 @@ const Faq = () => {
                   transition={{ duration: 0.3 }}
                   className="faq-answer-container"
                 >
-                  <div className="faq-answer">{item.answer}</div>
+                  <p>{item.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>
