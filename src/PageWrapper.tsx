@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   margin-left: 1em;
   margin-right: 1em;
-  margin-top: 1em;
+  margin-top: 0.9em;
   display: flex;
   flex-direction: column;
   gap: 1.5em;

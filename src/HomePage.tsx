@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import AnimatedImageSlider from "./components/ImageCarousel/AnimatedImageSlider";
 import AboutUs from "./components/AboutUs";
 import PageWrapper from "./PageWrapper";
+import Faq from "./components/Faq";
 
 function HomePage() {
   return (
@@ -35,14 +36,16 @@ function HomePage() {
           <MapComponent />
         </div>
 
-        <div id="events">{/* Your events component here */}</div>
+        {/* <div id="events"></div> */}
 
         <div id="about">
           <AboutUs />
         </div>
-
+        <div id="faq">
+          <Faq />
+        </div>
         <CursorBlob />
-      </PageWrapper>{" "}
+      </PageWrapper>
       <Footer />
     </>
   );

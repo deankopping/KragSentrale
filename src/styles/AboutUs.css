@@ -9,6 +9,8 @@
     background-position: center;
     padding-block: 1em;
 
+    height: 85vh;
+
     p {
       font-family: "Oswald", serif;
       color: white;
@@ -32,15 +34,14 @@
   }
 }
 
+.aboutContent {
+  display: flex;
+  gap: 1em;
+}
 .aboutContainer {
   padding-inline: 1em;
   border-radius: 6em;
   font-family: "Oswald", serif;
   font-weight: bold;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-}
-@media (max-width: 700px) {
-  h2 {
-    display: none;
-  }
 }
