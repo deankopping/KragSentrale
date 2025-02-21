@@ -1,6 +1,8 @@
 import "../styles/Faq.css";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useMediaQuery } from "react-responsive";
 
 interface FAQItem {
   question: string;
@@ -8,7 +10,14 @@ interface FAQItem {
 }
 
 const Faq = () => {
-  const [activeIndex, setActiveIndex] = React.useState<number | null>(2);
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
+
+  const { ref: faqRef, inView: faqInView } = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
 
   const faqItems: FAQItem[] = [
     {
@@ -35,52 +44,83 @@ const Faq = () => {
       answer:
         "You can update your payment method in the 'Billing' section of your account settings.",
     },
+    {
+      question: "How do I change my account mail ?",
+      answer:
+        "You can change your email address in your account settings under the 'Profile' section.",
+    },
+    {
+      question: "How can I change my payment method ?",
+      answer:
+        "You can update your payment method in the 'Billing' section of your account settings.",
+    },
   ];
 
   return (
     <div className="sectionContainer">
-      {/* <div className="faq-header"> */}
-      <h2 className="faq-title">
-        Frequently asked
-        <br />
-        <span className="gradient-text">questions</span>
-      </h2>
-      {/* </div> */}
+      <div className="faqContainer">
+        {isMobile ? (
+          <h2 className="faq-title"> FAQs</h2>
+        ) : (
+          <h2 className="faq-title">
+            {" "}
+            FREQUENTLY <br /> ASKED <br /> QUESTIONS <br />
+          </h2>
+        )}
 
-      <div className="faq-items">
-        {faqItems.map((item, index) => (
-          <motion.div key={index} className="faq-item" initial={false}>
-            <motion.button
-              className="faq-question"
-              onClick={() =>
-                setActiveIndex(activeIndex === index ? null : index)
+        <div className="faq-items">
+          {faqItems.map((item, index) => (
+            <motion.div
+              ref={faqRef}
+              key={index}
+              className="faq-item"
+              initial={{ opacity: 0, y: -index * 100 }}
+              animate={{
+                opacity: faqInView ? 1 : 0,
+                y: faqInView ? 0 : -index * 100,
+                transition: { duration: 0.5, delay: 0.5 + index * 0.2 },
+              }}
+              whileTap={
+                activeIndex !== index
+                  ? {
+                      scale: 1.1,
+                      transition: { duration: 0.2 },
+                    }
+                  : {}
               }
             >
-              <span>{item.question}</span>
-              <motion.span
-                className="faq-icon"
-                animate={{ rotate: activeIndex === index ? 180 : 0 }}
-                transition={{ duration: 0.5 }}
+              <motion.button
+                className="faq-question"
+                onClick={() =>
+                  setActiveIndex(activeIndex === index ? null : index)
+                }
               >
-                {activeIndex === index ? "−" : "+"}
-              </motion.span>
-            </motion.button>
-
-            <AnimatePresence initial={false}>
-              {activeIndex === index && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="faq-answer-container"
+                <span>{item.question}</span>
+                <motion.span
+                  className="faq-icon"
+                  animate={{ rotate: activeIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <p>{item.answer}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
+                  {activeIndex === index ? "−" : "+"}
+                </motion.span>
+              </motion.button>
+
+              <AnimatePresence initial={false}>
+                {activeIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="faq-answer-container"
+                  >
+                    <p>{item.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

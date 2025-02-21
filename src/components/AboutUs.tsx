@@ -1,9 +1,9 @@
 import "../styles/AboutUs.css";
-import Faq from "./Faq.tsx";
+
 import { Typewriter } from "./typewriter.tsx";
 const AboutUs = () => {
   return (
-    <div className="aboutContainer">
+    <div className="sectionContainer" style={{ justifyContent: "start" }}>
       <h2>ABOUT US</h2>
       <div className="aboutContent">
         <Typewriter

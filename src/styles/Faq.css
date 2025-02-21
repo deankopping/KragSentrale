@@ -1,7 +1,8 @@
-.faq-container {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 64px 16px;
+.faqContainer {
+  display: flex;
+  z-index: 100;
+  align-items: center;
+  gap: 2em;
 }
 
 .faq-header {
@@ -14,20 +15,8 @@
 .faq-title {
   font-size: 48px;
   font-weight: bold;
-  margin-bottom: 16px;
+
   line-height: 1.2;
-}
-
-.gradient-text {
-  background: linear-gradient(to right, #dc2626, #fb923c, #fcd34d);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.faq-subtitle {
-  color: #666;
-  margin-top: 16px;
 }
 
 .faq-items {
@@ -77,8 +66,9 @@
 }
 
 @media (max-width: 768px) {
-  .faq-container {
-    padding: 32px 16px;
+  .faqContainer {
+    flex-direction: column;
+    gap: 0.5em;
   }
 
   .faq-title {

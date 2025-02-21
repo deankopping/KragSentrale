@@ -36,14 +36,16 @@ function HomePage() {
           <MapComponent />
         </div>
 
-        <div id="events">{/* Your events component here */}</div>
+        {/* <div id="events"></div> */}
 
         <div id="about">
           <AboutUs />
         </div>
-        <Faq></Faq>
+        <div id="faq">
+          <Faq />
+        </div>
         <CursorBlob />
-      </PageWrapper>{" "}
+      </PageWrapper>
       <Footer />
     </>
   );
