@@ -58,8 +58,10 @@ const Footer = () => {
           <a href="mailto:kragSentrale@gmail.com" className="footerTextItem">
             kragSentrale@gmail.com
           </a>
-        </div>
+        </div>{" "}
+        <div className="allRightsReserevd">© all rights reserved</div>
       </motion.div>
+
       <motion.div
         className="footer-text-container"
         variants={containerVariants}

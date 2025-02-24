@@ -16,6 +16,7 @@ footer {
 .footer::before {
   content: "";
   position: absolute;
+  z-index: 1;
 
   top: 0;
   left: 0;
@@ -32,13 +33,16 @@ footer {
   font-family: "Oswald", serif;
   display: flex;
   margin-top: 2em;
-  margin-left: 2em;
-  margin-right: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
   justify-content: space-between;
   color: var(--offWhite);
   font-size: medium;
   line-height: 0%;
-  z-index: 100;
+
+  position: relative;
+
+  height: 13em;
 }
 
 .footerTextGroup {
@@ -53,6 +57,21 @@ footer {
   text-decoration: none;
   color: var(--offWhite);
   margin-bottom: 0.8em;
+}
+
+.footerTextItem:hover {
+  color: var(--colorOrange);
+}
+
+.allRightsReserevd {
+  display: flex;
+  justify-self: end;
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+
+  color: white;
+  font-family: "protest strike";
 }
 .footer-text-container {
   position: absolute;
