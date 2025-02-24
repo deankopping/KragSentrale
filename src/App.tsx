@@ -5,7 +5,7 @@ import MasonryGrid from "./MasonaryGrid";
 
 const App = () => {
   return (
-    <BrowserRouter basename="https://deankopping.github.io/KragSentrale/">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<MasonryGrid />} />
