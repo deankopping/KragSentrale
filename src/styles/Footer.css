@@ -68,7 +68,7 @@ footer {
   position: relative;
   font-family: "protest strike", sans-serif;
   font-size: min(40vw, 13em);
-  color: var(--offWhite);
+  color: white;
 
   display: inline-block;
   cursor: pointer;
@@ -79,4 +79,7 @@ footer {
   .footer-letter {
     font-size: 16.5em;
   }
+}
+
+@media (max-width: 700px) {
 }

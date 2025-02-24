@@ -38,7 +38,7 @@ function HomePage() {
 
         {/* <div id="events"></div> */}
 
-        <div id="about">
+        <div id="about" className="about">
           <AboutUs />
         </div>
         <div id="faq">

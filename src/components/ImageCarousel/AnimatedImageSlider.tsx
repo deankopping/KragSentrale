@@ -1,5 +1,6 @@
 import { useMediaQuery } from "react-responsive";
-import "../../styles/AnimatedImageSlider.css";
+
+import styles from "../../styles/imageSlider.module.css";
 
 import React from "react";
 
@@ -27,22 +28,20 @@ export default function AnimatedImageSlider() {
   }
 
   return (
-    <div className="carousel">
-      <ul className="carousel-track">
-        <Items className="carousel-items">
+    <div className={styles.carousel}>
+      <ul className={styles.carouselTrack}>
+        <Items className={styles.carouselItems}>
           {images.map((artwork, index) => (
-            <div className="artwork-container" key={index}>
-              <li className="artwork-item">
-                <picture>
-                  <source srcSet={`${artwork} 400w`}></source>
-                  <img
-                    src={artwork}
-                    height={isMobile ? 280 : 400}
-                    width={isMobile ? 280 : 400}
-                  ></img>
-                </picture>
-              </li>
-            </div>
+            <li className={styles.artworkItem} key={index}>
+              <picture>
+                <source srcSet={`${artwork} 400w`}></source>
+                <img
+                  src={artwork}
+                  height={isMobile ? 280 : 400}
+                  width={isMobile ? 280 : 400}
+                ></img>
+              </picture>
+            </li>
           ))}
         </Items>
       </ul>

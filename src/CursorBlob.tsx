@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./index.css"; // Optional: if you want to keep the styles separate
+import "./index.css";
 
 const CursorBlob = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });

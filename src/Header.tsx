@@ -37,7 +37,7 @@ const Header = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 20; // Adjust this value based on your header height
+      const headerOffset = 20;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - headerOffset;
@@ -50,9 +50,10 @@ const Header = () => {
   };
 
   const menuItems: MenuItem[] = [
-    { label: "LOCATION", id: "location", action: "scroll" },
     { label: "ENTRANCE", id: "prices", action: "scroll" },
-    { label: "EVENTS", id: "events", action: "scroll" },
+    { label: "LOCATION", id: "location", action: "scroll" },
+    // { label: "EVENTS", id: "events", action: "scroll" },
+    { label: "FAQs", id: "faq", action: "scroll" },
     { label: "ABOUT", id: "about", action: "scroll" },
     { label: "GALLERY", action: "link", id: "gallery" },
   ];
