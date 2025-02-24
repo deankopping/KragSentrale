@@ -1,6 +1,6 @@
 {
-  "name": "kragcentral",
-  "private": true,
+  "name": "kragsentrale",
+  "homepage": "https://deankopping.github.io/KragSentrale/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
