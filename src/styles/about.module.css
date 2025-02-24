@@ -1,0 +1,23 @@
+.aboutContent {
+  display: flex;
+  gap: 1em;
+
+  color: white;
+  z-index: 10;
+}
+
+@media (max-width: 700px) {
+  .sectionTitle {
+    visibility: hidden;
+    display: none;
+  }
+
+  .sectionContainer {
+    background: none !important;
+    padding-block: 1em !important;
+  }
+
+  .sectionContainer::before {
+    background: none !important;
+  }
+}
