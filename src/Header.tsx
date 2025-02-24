@@ -4,7 +4,6 @@ import "./styles/Header.css";
 import { Divide as Hamburger } from "hamburger-react";
 import { Logo } from "./Logo";
 import PopUpMenu from "./PopupMenu";
-import Socials from "./Socials";
 import { useMediaQuery } from "react-responsive";
 
 type Action = "scroll" | "link";

@@ -3,7 +3,6 @@ import "./styles/HomeBanner.css";
 import AboutUs from "./components/AboutUs";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Typewriter } from "./components/typewriter";
 
 const HomeBanner = () => {
   const bannerRef = useRef(null);
