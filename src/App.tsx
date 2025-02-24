@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomePage from "./HomePage";
-
 import MasonryGrid from "./MasonaryGrid";
 
 const App = () => {
