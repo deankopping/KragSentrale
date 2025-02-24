@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "motion/react";
 import "./styles/PopUpMenu.css";
 import { useEffect, useState } from "react";
 import { MenuItem } from "./Header";
-import { Router } from "react-router-dom";
 
 const PopUpMenu = ({
   isOpen,

@@ -1,23 +1,24 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import { compression } from "vite-plugin-compression2";
 
 const OPTIONS = {
   test: /\.(jpe?g|png)$/i,
   exclude: undefined,
   include: undefined,
   includePublic: true,
-  logStats: false, // Disable in production
-  ansiColors: false, // Disable in production
+  logStats: false,
+  ansiColors: false,
 
   png: {
-    quality: 70, // Balanced quality for PNG
+    quality: 100, // Balanced quality for PNG
   },
   jpeg: {
-    quality: 70, // Balanced quality for JPEG
+    quality: 100, // Balanced quality for JPEG
   },
   jpg: {
-    quality: 70, // Balanced quality for JPG
+    quality: 100, // Balanced quality for JPG
   },
   tiff: {
     quality: 85, // Slightly reduced for TIFF
@@ -33,5 +34,24 @@ const OPTIONS = {
 };
 export default defineConfig({
   publicDir: "public",
-  plugins: [react(), ViteImageOptimizer(OPTIONS)],
+  plugins: [
+    react(),
+    ViteImageOptimizer(OPTIONS),
+    compression({
+      algorithm: "brotliCompress",
+      deleteOriginalAssets: false,
+    }),
+  ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom"],
+          "motion-vendor": ["framer-motion"],
+          "router-vendor": ["react-router-dom"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+  },
 });
