@@ -61,7 +61,7 @@ const Header = () => {
   return (
     <>
       <AnimatePresence>
-        {!isScrolled && !isMobile && location.pathname === "/" && (
+        {!isScrolled && !isMobile && location.pathname === "/KragSentrale/" && (
           <motion.div>
             <header className="container">
               <div className="items">
@@ -124,7 +124,7 @@ const Header = () => {
       </AnimatePresence>
 
       <AnimatePresence>
-        {(isMobile || isScrolled || location.pathname != "/") && (
+        {(isMobile || isScrolled || location.pathname != "/KragSentrale/") && (
           <header className="container gradient-blur">
             <motion.div
               className="items"
