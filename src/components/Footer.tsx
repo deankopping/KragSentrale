@@ -54,11 +54,16 @@ const Footer = () => {
           </a>
         </div>
         <div className="footerTextGroup">
-          <motion.h1>CONTACT US</motion.h1>
-          <a href="mailto:kragSentrale@gmail.com" className="footerTextItem">
-            kragSentrale@gmail.com
-          </a>
-        </div>{" "}
+          <motion.h1>FIND US</motion.h1>
+          <a className="footerTextItem">48 Milton Road, Observatory</a>
+          <a className="footerTextItem">Cape Town</a>
+        </div>
+        <div className="footerTextGroup">
+          <motion.h1>COMPANY</motion.h1>
+          <a className="footerTextItem">Terms and Conditions</a>
+          <a className="footerTextItem">Conditions Of Use</a>
+          <a className="footerTextItem">Privacy Policy</a>
+        </div>
         <div className="allRightsReserevd">© all rights reserved</div>
       </motion.div>
 

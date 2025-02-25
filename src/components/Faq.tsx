@@ -21,38 +21,29 @@ const Faq = () => {
 
   const faqItems: FAQItem[] = [
     {
-      question: "Is there a free trial available for the payed options ?",
-      answer: "Yes, we offer a 14-day free trial for all paid features.",
+      question: "RENTAL SHOES",
+      answer:
+        "We do not offer rental shoes as the facility is focused on the more established climber.",
     },
     {
-      question: "Is it possible to subscribe to the app annually ?",
+      question: "LOAD SHEDDING",
       answer:
-        "Yes, we offer both monthly and annual subscription plans with a discount for annual commitments.",
+        "We are unfortunatly not yet load shedding proof but improvement coming soon. The gym is still open but the boards and lights will not work.",
     },
     {
-      question: "Is it possible to cancel my subscription ?",
+      question: "THE SETTING SCHEDULE",
       answer:
-        "Yes of course, just send us an email at contact@bookapp.com with a little reason of why you want to cancel your subscription and you will get a refund between 1-2 business days.",
+        "Look forward to a new set every Thursday. 8 -12 brand new problems to try",
     },
     {
-      question: "How do I change my account mail ?",
+      question: "GRADES",
       answer:
-        "You can change your email address in your account settings under the 'Profile' section.",
+        "Grading in the gym starts from about 6a and goes all the way to the top",
     },
     {
-      question: "How can I change my payment method ?",
+      question: "BUYING CHALK AND UTILITIES",
       answer:
-        "You can update your payment method in the 'Billing' section of your account settings.",
-    },
-    {
-      question: "How do I change my account mail ?",
-      answer:
-        "You can change your email address in your account settings under the 'Profile' section.",
-    },
-    {
-      question: "How can I change my payment method ?",
-      answer:
-        "You can update your payment method in the 'Billing' section of your account settings.",
+        "There is currently no chalk to be bought on premise but look forward in future to our vending machine stocking a wide array of chalk tape and brushes.",
     },
   ];
 

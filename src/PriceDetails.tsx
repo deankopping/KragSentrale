@@ -13,19 +13,18 @@ const sessionPassData = {
 
 const timePassData = {
   Demographic: [
-    "Time Pass 7 days (R)	",
     "Time Pass 30 days (R)",
     "Time Pass 90 days (R)",
     "Time Pass 365 days (R)",
   ],
-  "0 - 18": ["x", "x", "x", "x"],
-  "19 - ∞": ["x", "x", "x", "x"],
-  "University Student": ["x", "x", "x", "x"],
+  "0 - 18": ["R430", "R1160", "R4100"],
+  "19 - ∞": ["R420", "R1480", "R5270"],
+  "University Student": ["R549", "R1130", "R4000"],
 };
 
 const dayPassData = {
   Demographic: ["Day Pass 1 Day (R)"],
-  "0 - 18": ["x", "x", "x"],
+  "0 - 18": ["R75"],
   "19 - ∞": ["R99"],
   "University Student": ["R75"],
 };
