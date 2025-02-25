@@ -11,6 +11,7 @@ import AnimatedImageSlider from "./components/ImageCarousel/AnimatedImageSlider"
 import AboutUs from "./components/AboutUs";
 import PageWrapper from "./PageWrapper";
 import Faq from "./components/Faq";
+import AboutUsDesktop from "./components/aboutUsDesktop";
 
 function HomePage() {
   return (
@@ -36,10 +37,8 @@ function HomePage() {
           <MapComponent />
         </div>
 
-        {/* <div id="events"></div> */}
-
         <div id="about" className="about">
-          <AboutUs />
+          <AboutUsDesktop></AboutUsDesktop>
         </div>
         <div id="faq">
           <Faq />

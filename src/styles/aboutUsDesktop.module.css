@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 2em;
+
+  align-items: center;
+  /* background-color: aqua; */
+  z-index: 100;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 50%;
+
+  right: 1.5em;
+}
+
+.text {
+  font-family: "Oswald", serif;
+  font-weight: bold;
+
+  color: var(--bkBrown);
+  background-color: var(--offWhite);
+  border-radius: 3em;
+  padding: 1em;
+}
+
+.aboutImage {
+  object-fit: contain;
+  width: 55%;
+  display: flex;
+}
