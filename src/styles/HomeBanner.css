@@ -75,7 +75,7 @@ path {
 
   .homeBannerText {
     text-align: left;
-
+    margin-block: 2em;
     display: flex;
     gap: 1em;
   }

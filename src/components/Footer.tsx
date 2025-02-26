@@ -61,7 +61,7 @@ const Footer = () => {
         <div className="footerTextGroup">
           <motion.h1>COMPANY</motion.h1>
           <a className="footerTextItem">Terms and Conditions</a>
-          <a className="footerTextItem">Conditions Of Use</a>
+
           <a className="footerTextItem">Privacy Policy</a>
         </div>
         <div className="allRightsReserevd">© all rights reserved</div>

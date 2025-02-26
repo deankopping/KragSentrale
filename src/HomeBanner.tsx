@@ -3,34 +3,40 @@ import "./styles/HomeBanner.css";
 import AboutUs from "./components/AboutUs";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import { useMediaQuery } from "react-responsive";
 
 const HomeBanner = () => {
   const bannerRef = useRef(null);
   const [blurAmount, setBlurAmount] = useState(0);
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const visibleRatio = entry.intersectionRatio;
+    if (isMobile) {
+      return;
+    } else {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          const visibleRatio = entry.intersectionRatio;
 
-        const newBlurAmount = Math.min(8, (1 - visibleRatio) * 8);
-        setBlurAmount(newBlurAmount);
-      },
-      {
-        threshold: Array.from({ length: 100 }, (_, i) => i / 100),
-        root: null,
-      }
-    );
+          const newBlurAmount = Math.min(8, (1 - visibleRatio) * 8);
+          setBlurAmount(newBlurAmount);
+        },
+        {
+          threshold: Array.from({ length: 100 }, (_, i) => i / 100),
+          root: null,
+        }
+      );
 
-    if (bannerRef.current) {
-      observer.observe(bannerRef.current);
-    }
-
-    return () => {
       if (bannerRef.current) {
-        observer.unobserve(bannerRef.current);
+        observer.observe(bannerRef.current);
       }
-    };
+
+      return () => {
+        if (bannerRef.current) {
+          observer.unobserve(bannerRef.current);
+        }
+      };
+    }
   }, []);
 
   return (

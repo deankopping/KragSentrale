@@ -15,6 +15,7 @@
   .sectionContainer {
     background: none !important;
     padding-block: 1em !important;
+    font-family: "protest strike";
   }
 
   .sectionContainer::before {
