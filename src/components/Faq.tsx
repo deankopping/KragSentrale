@@ -69,7 +69,7 @@ const Faq = () => {
               animate={{
                 opacity: faqInView ? 1 : 0,
                 y: faqInView ? 0 : -index * 100,
-                transition: { duration: 0.5, delay: 0.5 + index * 0.2 },
+                transition: { duration: 0.5, delay: 0.8 + index * 0.2 },
               }}
               whileTap={
                 activeIndex !== index

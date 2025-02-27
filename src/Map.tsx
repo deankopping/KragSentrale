@@ -5,29 +5,38 @@ import "./styles/Map.css";
 
 import "./index.css";
 import { motion } from "motion/react";
+import { Typewriter } from "./components/typewriter";
 
 const MapComponent = () => {
   const location = { lat: -33.93789037379257, lng: 18.464487040139478 };
 
   return (
-    <div
-      className="sectionContainer"
-      style={{
-        backgroundImage: "url(../../public/_DSC7948.jpg)",
-        maxHeight: "85vh",
-      }}
-    >
-      <h2>WHERE TO FIND US</h2>
+    <div className="sectionContainer">
+      {" "}
+      <h2 className="titleMobile">WHERE TO FIND US</h2>
       <div className="adressDetails">
+        {" "}
+        <div className="addressText">
+          <h2 className="titleDesktop">
+            WHERE TO FIND
+            <br />
+            US
+          </h2>
+          <Typewriter
+            text={["48 Milton Rd, Observatory, Cape Town, 7925"]}
+            staggerValue={0.05}
+            className="adress"
+            textAlignment="center"
+          ></Typewriter>
+        </div>
         <div className="mapContainer">
-          <APIProvider apiKey="AIzaSyB-qPipYA1rJWVMBNmzX91kDp-pYMb0MGU">
+          <APIProvider apiKey="AIzaSyBVeybQfT_x-JqIDYG5rdTHYX7SSNrWD-M">
             <Map
               style={{
                 width: "100%",
                 height: "100%",
                 borderRadius: "50px",
                 overflow: "hidden",
-
                 boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.4)",
               }}
               mapId={"krag"}
@@ -35,24 +44,11 @@ const MapComponent = () => {
               defaultCenter={location}
             >
               <AdvancedMarker position={location}>
-                <Pin glyphColor="#fff" borderColor="#e1381b" />
+                <Pin glyphColor="black" borderColor="#e1381b" />
               </AdvancedMarker>
             </Map>
           </APIProvider>
         </div>
-
-        <motion.h1
-          className="adress"
-          // initial={{ x: "10%", opacity: 0 }}
-          // animate={{ x: "100%", opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 2 }}
-        >
-          48 Milton Road Observatory
-        </motion.h1>
-        {/* <h3>
-              Parking is available across Main Road at the Cape Town Science
-              centre
-            </h3> */}
       </div>
     </div>
   );

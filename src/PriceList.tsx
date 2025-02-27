@@ -60,10 +60,10 @@ const PriceList = () => {
                   priceListView && {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 1 },
+                    transition: { duration: 1.5 },
                   }
                 }
-                transition={{ delay: 0.1 * index }}
+                transition={{ delay: 0.5 * index }}
                 onClick={() => {
                   setClickedIndex(index);
                 }}

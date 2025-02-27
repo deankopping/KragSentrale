@@ -1,5 +1,5 @@
 import "./index.css";
-import "./styles/HomeBanner.css";
+import styles from "./styles/homeBanner.module.css";
 import AboutUs from "./components/AboutUs";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
@@ -41,9 +41,8 @@ const HomeBanner = () => {
 
   return (
     <>
-      <div className="homeBanner" ref={bannerRef}>
+      <div className={styles.homeBanner} ref={bannerRef}>
         <div
-          className="blur-overlay"
           style={{
             position: "absolute",
             top: 0,
@@ -58,13 +57,13 @@ const HomeBanner = () => {
             zIndex: 100,
           }}
         />
-        <div className="homeBannerText">
-          <motion.div className="mainHeading">
+        <div className={styles.homeBannerText}>
+          <motion.div className={styles.mainHeading}>
             <motion.h1
               initial={{ x: "100%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ ease: "easeOut", duration: 2 }}
-              className="krag"
+              className={styles.krag}
             >
               KRAG
             </motion.h1>
@@ -73,13 +72,13 @@ const HomeBanner = () => {
               initial={{ x: "-100%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ ease: "easeOut", duration: 2 }}
-              className="sentrale"
+              className={styles.sentrale}
             >
               SENTRALE
             </motion.h1>
           </motion.div>
 
-          <div className="aboutUs">
+          <div className={styles.aboutUs}>
             <AboutUs />
           </div>
         </div>

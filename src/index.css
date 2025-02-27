@@ -27,8 +27,14 @@
     font-family: "protest strike";
     margin: 0rem;
     font-size: 5em;
-
     color: var(--colorOrange);
+  }
+
+  .adress {
+    font-family: "protest strike";
+    margin: 0rem;
+    font-size: 3em;
+    color: white;
   }
 
   .sectionContainer {
@@ -95,7 +101,9 @@
     .sectionContainer::before {
       border-radius: 0%;
     }
-
+    h5 {
+      font-size: 2em;
+    }
     h2 {
       font-size: 3em;
     }
