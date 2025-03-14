@@ -4,7 +4,7 @@ import { Typewriter } from "./typewriter";
 
 export default function AboutUsDesktop() {
   return (
-    <div className="sectionContainer">
+    <div className={`sectionContainer ${styles.background}`}>
       <div className={styles.container}>
         <div>
           <img src={img} className={styles.aboutImage}></img>

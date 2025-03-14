@@ -59,7 +59,10 @@ export const Typewriter = ({
           }}
           initial="hidden"
           animate={controls}
-          style={{ marginBottom: "0.5em", textAlign: textAlignment }}
+          style={{
+            marginBottom: "0.5em",
+            textAlign: textAlignment,
+          }}
         >
           {paragraph.split("").map((char: string, i: number) => (
             <motion.span key={`${char}-${i}`} variants={letterVariants}>

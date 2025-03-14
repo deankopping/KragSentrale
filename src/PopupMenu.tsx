@@ -7,6 +7,7 @@ import { MenuItem } from "./Header";
 const PopUpMenu = ({
   isOpen,
   menuItems,
+  setIsOpen,
 }: {
   isOpen: boolean;
   setIsOpen: (x: boolean) => void;
@@ -17,7 +18,7 @@ const PopUpMenu = ({
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 20; // Adjust this value based on your header height
+      const headerOffset = isMobile ? 75 : 20;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - headerOffset;
@@ -26,6 +27,20 @@ const PopUpMenu = ({
         top: offsetPosition,
         behavior: "smooth",
       });
+
+      const checkScrollEnd = () => {
+        if (Math.abs(window.pageYOffset - offsetPosition) < 2) {
+          setIsOpen(false);
+          window.removeEventListener("scroll", checkScrollEnd);
+        }
+      };
+
+      window.addEventListener("scroll", checkScrollEnd);
+
+      setTimeout(() => {
+        setIsOpen(false);
+        window.removeEventListener("scroll", checkScrollEnd);
+      }, 1000);
     }
   };
 

@@ -31,3 +31,7 @@
   width: 55%;
   display: flex;
 }
+
+.background {
+  background-image: url("../../public/_DSC8254.jpg");
+}

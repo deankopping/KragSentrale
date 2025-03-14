@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "react-responsive";
 
+import sectionBg from "../../public/_DSC8008.jpg";
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -48,13 +50,12 @@ const Faq = () => {
   ];
 
   return (
-    <div className="sectionContainer">
+    <div className="sectionContainer background">
       <div className="faqContainer">
         {isMobile ? (
           <h2 className="faq-title"> FAQs</h2>
         ) : (
           <h2 className="faq-title">
-            {" "}
             FREQUENTLY <br /> ASKED <br /> QUESTIONS <br />
           </h2>
         )}

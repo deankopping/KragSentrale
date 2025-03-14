@@ -4,14 +4,14 @@ import { APIProvider } from "@vis.gl/react-google-maps";
 import "./styles/Map.css";
 
 import "./index.css";
-import { motion } from "motion/react";
+
 import { Typewriter } from "./components/typewriter";
 
 const MapComponent = () => {
   const location = { lat: -33.93789037379257, lng: 18.464487040139478 };
 
   return (
-    <div className="sectionContainer">
+    <div className="sectionContainer mapSectionBackground">
       {" "}
       <h2 className="titleMobile">WHERE TO FIND US</h2>
       <div className="adressDetails">

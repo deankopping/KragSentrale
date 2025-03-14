@@ -27,6 +27,10 @@
   width: 100%;
 }
 
+.background {
+  background-image: url("../../public/bgFAQ.jpg");
+}
+
 .faq-item {
   border-radius: 1.5em;
   overflow: hidden;
@@ -68,14 +72,6 @@
 @media (max-width: 768px) {
   .faqContainer {
     flex-direction: column;
-    gap: 0.5em;
-  }
-
-  .faq-title {
-    font-size: 36px;
-  }
-
-  .faq-header {
-    margin-bottom: 32px;
+    gap: 2em;
   }
 }
