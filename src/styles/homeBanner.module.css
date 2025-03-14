@@ -1,0 +1,136 @@
+.homeBanner {
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 96vh;
+
+  background-image: url("../../public/bannerImage2.jpg");
+  background-size: 100%;
+  background-position: center;
+
+  border-radius: 2em;
+  position: relative;
+}
+
+.homeBanner::before {
+  content: "";
+  position: absolute;
+  border-radius: 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  z-index: 2;
+}
+
+@media (min-width: 700px) {
+  .aboutUs {
+    display: none;
+  }
+}
+
+.homeBannerText {
+  text-align: left;
+  font-family: "protest strike";
+  color: white;
+
+  z-index: 10;
+}
+
+.krag {
+  padding: 0;
+  margin: 0;
+  line-height: 0.9;
+  font-size: 12em;
+}
+
+.sentrale {
+  line-height: 0.9;
+  padding: 0;
+  margin: 0;
+  font-size: 12em;
+}
+
+@media (max-width: 700px) {
+  .mainHeading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .krag {
+    font-size: 9em;
+    display: flex;
+  }
+
+  .sentrale {
+    font-size: 5em;
+  }
+
+  .homeBannerText {
+    text-align: left;
+    margin-block: 2em;
+    display: flex;
+    gap: 1em;
+  }
+  .homeBanner {
+    justify-content: center;
+
+    background-image: url("../../public/mobileBannerImage2.jpg");
+    background-size: cover;
+
+    border-radius: 0%;
+
+    height: auto;
+    align-items: flex-start;
+    padding-top: 5em;
+    position: relative;
+  }
+  .homeBanner::before {
+    border-radius: 0;
+  }
+}
+
+/* 
+path {
+  fill: transparent;
+  stroke: var(--colorOrange);
+
+  stroke-width: 0.2;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimation 1.3s ease-in 1 forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    fill: var(--colorOrange);
+    opacity: 100%;
+    stroke-dashoffset: 0;
+  }
+} */
+.homeBannerText {
+  flex-direction: column;
+  padding: 1.5em;
+  align-items: baseline;
+}
+
+@media (min-width: 1800px) {
+  .krag {
+    font-size: 16em;
+  }
+  .sentrale {
+    font-size: 16em;
+  }
+  .homeBannerText {
+    padding-bottom: 1em;
+  }
+}
