@@ -11,7 +11,7 @@ const MapComponent = () => {
   const location = { lat: -33.93789037379257, lng: 18.464487040139478 };
 
   return (
-    <div className="sectionContainer background">
+    <div className="sectionContainer mapSectionBackground">
       {" "}
       <h2 className="titleMobile">WHERE TO FIND US</h2>
       <div className="adressDetails">

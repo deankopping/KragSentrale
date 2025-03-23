@@ -26,6 +26,12 @@
   gap: 2em;
 }
 
+.mapSectionBackground {
+  background-image: url("../../public/entranceSectionBg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 @media (max-width: 700px) {
   .adressDetails {
     flex-direction: column;
