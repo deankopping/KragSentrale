@@ -25,7 +25,7 @@ const Faq = () => {
     {
       question: "RENTAL SHOES",
       answer:
-        "We do not offer rental shoes as the facility is focused on the more established climber.",
+        "We do not offer rental shoes.",
     },
     {
       question: "LOAD SHEDDING",
@@ -35,12 +35,12 @@ const Faq = () => {
     {
       question: "THE SETTING SCHEDULE",
       answer:
-        "Look forward to a new set every Thursday. 8 -12 brand new problems to try",
+        "Look forward to a new set every Thursday. 8-12 brand new problems to try",
     },
     {
       question: "GRADES",
       answer:
-        "Grading in the gym starts from about 6a and goes all the way to the top",
+        "Grading in the gym starts from about 6a and goes all the way to the top. Our most common grade range is 6C to 7B",
     },
     {
       question: "BUYING CHALK AND UTILITIES",

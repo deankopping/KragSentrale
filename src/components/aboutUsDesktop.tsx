@@ -15,7 +15,7 @@ export default function AboutUsDesktop() {
             {" "}
             <Typewriter
               text={[
-                "At Krag Sentrale, we're a passionate team dedicated to advancing the sport of climbing in South Africa.",
+                "At Kragsentrale, we're a passionate team dedicated to advancing the sport of climbing in South Africa.",
 
                 "For years, climbers in the country have lacked a dedicated space to push their limits and refine their skills. We're changing that. Our facility offers the ideal environment for experienced climbers to hone their craft, with state-of-the-art training boards and a variety of climbing setups designed for all levels. We believe we have the best training environment in South Africa, and we're excited to share it with you.",
 

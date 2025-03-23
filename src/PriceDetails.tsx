@@ -17,9 +17,9 @@ const timePassData = {
     "Time Pass 90 days (R)",
     "Time Pass 365 days (R)",
   ],
-  "0 - 18": ["R430", "R1160", "R4100"],
-  "19 - ∞": ["R420", "R1480", "R5270"],
-  "University Student": ["R549", "R1130", "R4000"],
+  "0 - 18": ["R420", "R1160", "R4100"],
+  "19 - ∞": ["R550", "R1480", "R5270"],
+  "University Student": ["R420", "R1130", "R4000"],
 };
 
 const dayPassData = {
@@ -47,7 +47,7 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
       headings = Object.keys(sessionPassData);
       rows = Object.values(sessionPassData);
       description =
-        " When purchasing a Session Pass, you buy a number of tokens which represent single sessions.";
+        "A single session pass grants you access to the gym for 12h. They can be used at any time after purchasing. When you have an active time pass they are not used.";
       heading = "Session Pass Pricing";
       break;
 

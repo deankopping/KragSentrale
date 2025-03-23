@@ -11,7 +11,7 @@ const priceList = [
     item: "ENTRANCE",
     details: `
 # Members
-Members with a valid, paid membership receive **24/7 unlimited access** to the gym. Each member is provided with an NFC tag, allowing them to easily scan in and access the AnimatedImageSlider. Memberships can be acquired during regular hours when the gym is open to day customers. We highly recommend this option as the preferred way to climb at Krag Sentrale.
+Members with a valid, paid membership receive **24/7 unlimited access** to the gym. Each member is provided with an NFC tag, allowing them to easily scan in and access the AnimatedImageSlider. Memberships can be acquired during regular hours when the gym is open to day customers. We highly recommend this option as the preferred way to climb at Kragsentrale.
 
 # Day Customers
 The gym is open to day customers from **Tuesday to Thursday, 16:00 - 21:00**. Outside of these hours, non-members may attempt to gain access if someone is available to let them in. In such cases, we operate on an *honesty system* for payment. CCTV cameras are installed on the premises to ensure accountability, so please ensure to make the necessary payment when accessing the gym.
