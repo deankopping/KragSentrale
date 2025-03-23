@@ -52,13 +52,12 @@ const Header = () => {
   const menuItems: MenuItem[] = [
     { label: "ENTRANCE", id: "prices", action: "scroll" },
     { label: "LOCATION", id: "location", action: "scroll" },
-    // { label: "EVENTS", id: "events", action: "scroll" },
     { label: "FAQs", id: "faq", action: "scroll" },
     { label: "ABOUT", id: "about", action: "scroll" },
     {
       label: "GALLERY",
       action: "link",
-      id: `${import.meta.env.BASE_URL}/gallery`,
+      id: `gallery`,
     },
   ];
 
@@ -130,7 +129,7 @@ const Header = () => {
       </AnimatePresence>
 
       <AnimatePresence>
-        {(isMobile || isScrolled || location.pathname != "/KragSentrale/") && (
+        {(isMobile || isScrolled || location.pathname != "/") && (
           <header className={`${styles.container} ${styles.gradientBlur}`}>
             <motion.div
               className={styles.items}

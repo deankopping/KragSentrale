@@ -57,6 +57,7 @@
     padding: 2rem;
 
     height: auto;
+    min-height: 70vh;
 
     h2 {
       z-index: 100;

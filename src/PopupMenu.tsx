@@ -74,6 +74,7 @@ const PopUpMenu = ({
                 key={index}
                 className="popUpMenuItem"
                 onClick={() => {
+                  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                   item.action === "scroll"
                     ? scrollToSection(item.id)
                     : (window.location.href = `/${item.id}`);

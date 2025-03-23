@@ -33,7 +33,7 @@ const OPTIONS = {
   cacheLocation: "./node_modules/.cache/vite-plugin-image-optimizer", // Cache location
 };
 export default defineConfig({
-  base: "/KragSentrale/",
+  base: "/",
   publicDir: "public",
   plugins: [
     react(),

@@ -43,7 +43,7 @@ const PriceList = () => {
 
   return (
     <div ref={priceListRef}>
-      <div className="sectionContainer">
+      <div className="sectionContainer background">
         <h2 className="title">CLIMBING AT KRAG SENTRALE</h2>
         <div className="contentContainer">
           <div className="priceListContainer">
