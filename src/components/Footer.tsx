@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="footerTextGroup">
           <motion.h1>CONTACT US</motion.h1>
           <a href="mailto:kragSentrale@gmail.com" className="footerTextItem">
-            kragSentrale@gmail.com
+            kragsentrale@gmail.com
           </a>
           <a href="tel:0842635734" className="footerTextItem">
             0842635734
