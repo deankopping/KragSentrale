@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Data Deletion</title>
+	<link rel="stylesheet" href="/styles.css">
+	<style>
+		.otp-container {
+			display: flex;
+			gap: 5px;
+			justify-content: center;
+		}
+
+		.otp-input {
+			width: 2ch;
+			/* Ensures only one character fits */
+			height: 2em;
+			text-align: center;
+			font-size: 1.5em;
+			border: 1px solid var(--accent);
+			border-radius: 5px;
+		}
+	</style>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const inputs = document.querySelectorAll(".otp-input");
+			const otpForm = document.getElementById("otp-form");
+
+			function checkOTPCompletion() {
+				const otpValues = Array.from(inputs).map(input => input.value).join("");
+				document.getElementById("delete-btn").disabled = otpValues.length !== inputs.length;
+			}
+
+			inputs.forEach((input, index) => {
+				input.addEventListener("input", (e) => {
+					if (e.inputType !== "deleteContentBackward" && input.value.match(/\d/)) {
+						if (index < inputs.length - 1) {
+							inputs[index + 1].focus();
+						}
+					} else {
+						input.value = ""; // Ensure only digits remain
+					}
+					checkOTPCompletion();
+				});
+
+				input.addEventListener("keydown", (e) => {
+					if (e.key === "Backspace" && input.value === "" && index > 0) {
+						inputs[index - 1].focus();
+					}
+				});
+
+				input.addEventListener("paste", (e) => {
+					e.preventDefault();
+					const pasteData = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, inputs.length);
+					pasteData.split("").forEach((char, i) => {
+						if (inputs[i]) {
+							inputs[i].value = char;
+						}
+					});
+					checkOTPCompletion();
+				});
+			});
+
+			otpForm.addEventListener("submit", (event) => {
+				event.preventDefault(); // Prevent normal submission
+				const otpValues = Array.from(inputs).map(input => input.value).join("");
+
+				fetch("/account/confirm-delete", {
+					method: "POST",
+					headers: {"Content-Type": "application/x-www-form-urlencoded"},
+					body: `code=${encodeURIComponent(otpValues)}`
+				})
+					.then(response => {
+						if (!response.ok) {
+							throw new Error(`Error ${response.status}: ${response.statusText}`);
+						}
+						return response.text();
+					})
+					.then(htmlResponse => {
+						document.body.innerHTML = htmlResponse;
+					})
+					.catch(error => {
+						alert("Error processing deletion request.");
+						console.error(error);
+					});
+			});
+
+		});
+
+		let resendAttempts = 0;
+
+		function validatePhoneNumber() {
+			const phoneInput = document.getElementById("phoneNumber");
+			const sendButton = document.getElementById("send-code-btn");
+			const phoneError = document.getElementById("phone-error");
+			const phonePattern = /^\+\d{6,15}$/; // Must start with + and have 6-15 digits
+
+			if (phonePattern.test(phoneInput.value)) {
+				phoneError.innerText = "";
+				sendButton.disabled = false;
+			} else {
+				phoneError.innerText = "Enter a valid phone number with country code (e.g., +27123456789).";
+				sendButton.disabled = true;
+			}
+		}
+
+		function sendDeleteRequest(event) {
+			event.preventDefault();
+			const phoneNumber = document.getElementById("phoneNumber").value;
+			const url = `/account/send-delete-code?number=${encodeURIComponent(phoneNumber)}`;
+
+			fetch(url, {method: "POST"})
+				.then(response => {
+					if (!response.ok) throw new Error("Failed to send code.");
+					return response.json();
+				})
+				.then(() => {
+					document.getElementById("confirmation-section").style.display = "block";
+					document.getElementById("send-code-btn").disabled = true;
+
+					setTimeout(() => {
+						document.getElementById("send-code-btn").disabled = false;
+					}, 30000);
+				})
+				.catch(error => {
+					document.getElementById("phone-error").innerText = "Error sending code. Try again.";
+					console.error(error);
+				});
+		}
+
+		function resendCode() {
+			if (resendAttempts < 3) {
+				resendAttempts++;
+				sendDeleteRequest(new Event("resend"));
+
+				document.getElementById("send-code-btn").disabled = true;
+				document.getElementById("resend-message").innerText = `Resend available in 30s(${3 - resendAttempts} attempts left)`;
+
+				setTimeout(() => {
+					document.getElementById("send-code-btn").disabled = false;
+					document.getElementById("resend-message").innerText = "";
+				}, 30000);
+			} else {
+				document.getElementById("resend-message").innerHTML = `You've reached the resend limit. <br> Please contact <a href="mailto:kragsentrale@gmail.com">kragsentrale@gmail.com</a>.`;
+				document.getElementById("send-code-btn").disabled = true;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Account Deletion</h1>
+	</header>
+
+	<main>
+		<section>
+			<h2>Delete Your Account</h2>
+			<p>Enter your phone number below to request an account deletion. You will receive a confirmation code via
+				whatsapp, which you must enter to complete the process.</p>
+		</section>
+
+		<section>
+			<h2>Request Deletion</h2>
+			<form onsubmit="sendDeleteRequest(event)">
+				<label for="phoneNumber">Phone Number (with country code):</label>
+				<input type="text" id="phoneNumber" name="phoneNumber" oninput="validatePhoneNumber()" required>
+				<p id="phone-error" style="color: var(--accent);"></p>
+				<button type="submit" id="send-code-btn" disabled>Send Confirmation Code</button>
+			</form>
+		</section>
+
+		<section id="confirmation-section" style="display: none;">
+			<h2>Enter Confirmation Code</h2>
+			<form id="otp-form" action="/account/confirm-delete" method="POST">
+				<div class="otp-container">
+					<input type="text" class="otp-input" maxlength="1" pattern="\d" required>
+					<input type="text" class="otp-input" maxlength="1" pattern="\d" required>
+					<input type="text" class="otp-input" maxlength="1" pattern="\d" required>
+					<input type="text" class="otp-input" maxlength="1" pattern="\d" required>
+					<input type="text" class="otp-input" maxlength="1" pattern="\d" required>
+					<input type="text" class="otp-input" maxlength="1" pattern="\d" required>
+				</div>
+				<button type="submit" id="delete-btn" disabled>Delete Data</button>
+			</form>
+		</section>
+
+		<section>
+			<p>Before proceeding, please read our <a href="/terms-of-service.html" target="_blank">Terms of Service</a>
+				and <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; Kragsentrale. All Rights Reserved.
+	</footer>
+</body>
+
+</html>

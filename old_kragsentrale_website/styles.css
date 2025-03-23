@@ -1,0 +1,99 @@
+/* Catppuccin Mocha Colors */
+:root {
+	--base: #1e1e2e;
+	--mantle: #181825;
+	--text: #cdd6f4;
+	--subtext: #a6adc8;
+	--highlight: #f5e0dc;
+	--accent: #f38ba8;
+	--accent-hover: #f7768e;
+	--border: #313244;
+	--code-bg: #313244;
+	--code-text: #f5e0dc;
+	--link: #89b4fa;
+	--link-hover: #74c7ec;
+}
+
+body {
+	font-family: 'Fira Code', 'JetBrains Mono', monospace;
+	background-color: var(--base);
+	color: var(--text);
+	margin: 0;
+	padding: 0;
+	padding-bottom: 20px;
+	line-height: 1.6;
+}
+
+header {
+	background-color: var(--mantle);
+	padding: 20px;
+	text-align: center;
+	border-bottom: 1px solid var(--border);
+}
+
+h1 {
+	font-size: 1.8rem;
+	margin: 0;
+	color: var(--highlight);
+}
+
+
+main {
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 20px;
+	background-color: var(--mantle);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+section {
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 1.4rem;
+	color: var(--accent);
+	margin-bottom: 10px;
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 5px;
+}
+
+p {
+	font-size: 1rem;
+	color: var(--subtext);
+}
+
+a {
+	color: var(--link);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--link-hover);
+	text-decoration: underline;
+}
+
+/* Code-like block styling */
+pre,
+code {
+	font-family: 'Fira Code', 'JetBrains Mono', monospace;
+	background-color: var(--code-bg);
+	color: var(--code-text);
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 0.95rem;
+}
+
+footer {
+	text-align: center;
+	padding: 10px;
+	background-color: var(--mantle);
+	border-top: 1px solid var(--border);
+	font-size: 0.9rem;
+	color: var(--subtext);
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
