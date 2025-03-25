@@ -37,6 +37,7 @@ export default defineConfig({
   base: "/",
 	server:	{
 		port: 7000,
+		allowedHosts: ['kragsentrale.co.za'],
 	},
   publicDir: "public",
   plugins: [
