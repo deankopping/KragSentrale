@@ -40,7 +40,7 @@ const Faq = () => {
     {
       question: "GRADES",
       answer:
-        "Grading in the gym starts from about 6a and goes all the way to the top. Our most common grade range is 6C to 7B",
+        "We use a tag system which starts at 0 and goes to 5. The easiest climb we have will typically be around 6A to 6B, with the most common being in the range 6C to 7B. We focus on psyched climbers who want to push their limits.",
     },
     {
       question: "BUYING CHALK AND UTILITIES",
