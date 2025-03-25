@@ -32,8 +32,12 @@ const OPTIONS = {
   cache: true, // Enable caching
   cacheLocation: "./node_modules/.cache/vite-plugin-image-optimizer", // Cache location
 };
+
 export default defineConfig({
   base: "/",
+	server:	{
+		port: 7000,
+	},
   publicDir: "public",
   plugins: [
     react(),
