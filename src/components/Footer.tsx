@@ -40,11 +40,11 @@ const Footer = () => {
       <motion.div className="footer-top-text-container">
         <div className="footerTextGroup">
           <motion.h1>CONTACT US</motion.h1>
-          <a href="mailto:kragSentrale@gmail.com" className="footerTextItem">
+          <a href="mailto:kragsentrale@gmail.com" className="footerTextItem">
             kragsentrale@gmail.com
           </a>
-          <a href="tel:0842635734" className="footerTextItem">
-            0842635734
+         <a href="tel:+27609015122" className="footerTextItem">
+            Whatsapp message only: +27609015122
           </a>
         </div>
         <div className="footerTextGroup">

@@ -10,7 +10,7 @@ const AboutUs = () => {
       <div className={styles.aboutContent}>
         <Typewriter
           text={[
-            "For years, climbers in the country have lacked a dedicated space to push their limits and refine their skills. We're changing that. Our facility offers the ideal environment for experienced climbers to hone their craft, with state-of-the-art training boards and a variety of climbing setups designed for all levels. We believe we have the best training environment in South Africa, and we're excited to share it with you.",
+            "For years, climbers in the country have lacked a dedicated space to push their limits and refine their skills. We're changing that. Our facility offers the ideal environment for experienced climbers to hone their craft, with state-of-the-art training boards and climbing-specific training equipment. We believe we have the best training environment in South Africa, and we're excited to share it with you.",
           ]}
           className="aboutText"
           staggerValue={0.01}

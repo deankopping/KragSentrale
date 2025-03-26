@@ -35,7 +35,7 @@ const Faq = () => {
     {
       question: "THE SETTING SCHEDULE",
       answer:
-        "Look forward to a new set every Thursday. 8-12 brand new problems to try",
+        "Look forward to a new set every Thursday. 8-12 brand new problems to try.",
     },
     {
       question: "GRADES",
@@ -45,7 +45,7 @@ const Faq = () => {
     {
       question: "BUYING CHALK AND UTILITIES",
       answer:
-        "There is currently no chalk to be bought on premise but look forward in future to our vending machine stocking a wide array of chalk tape and brushes.",
+        "There is currently no chalk to be bought on premise but look forward to our vending machine stocking a wide array of chalk tape and brushes.",
     },
   ];
 

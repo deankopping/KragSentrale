@@ -2,28 +2,27 @@ import { useMediaQuery } from "react-responsive";
 
 const sessionPassData = {
   Demographic: [
-    "Session Pass 1 Day (R)",
-    "Session Pass 10 Day (R)",
-    "Session Pass 30 Day (R)",
+    "Session Pass 10 Day",
+    "Session Pass 30 Day",
   ],
-  "0 - 18": ["x", "x", "x"],
-  "19 - ∞": ["x", "x", "x"],
-  "University Student": ["x", "x", "x"],
+  "0 - 18": ["R500", "R1350"],
+  "19 - ∞": ["R650", "R1750"],
+  "University Student": ["R480", "R1300"],
 };
 
 const timePassData = {
   Demographic: [
-    "Time Pass 30 days (R)",
-    "Time Pass 90 days (R)",
-    "Time Pass 365 days (R)",
+    "Time Pass 30 days",
+    "Time Pass 90 days",
+    "Time Pass 365 days",
   ],
-  "0 - 18": ["R420", "R1160", "R4100"],
+  "0 - 18": ["R430", "R1160", "R4100"],
   "19 - ∞": ["R550", "R1480", "R5270"],
   "University Student": ["R420", "R1130", "R4000"],
 };
 
 const dayPassData = {
-  Demographic: ["Day Pass 1 Day (R)"],
+  Demographic: ["Day Pass 1 Day"],
   "0 - 18": ["R75"],
   "19 - ∞": ["R99"],
   "University Student": ["R75"],
@@ -47,8 +46,9 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
       headings = Object.keys(sessionPassData);
       rows = Object.values(sessionPassData);
       description =
-        "A single session pass grants you access to the gym for 12h. They can be used at any time after purchasing. When you have an active time pass they are not used.";
-      heading = "Session Pass Pricing";
+        "A single session pass grants you access to the gym for 12h from when you use it. When you have an active time pass they are not used. These passes expire after 3 months.";
+      //heading = "Session Pass Pricing";
+      heading = "Coming soon...";
       break;
 
     case PassTypes.timePass:
