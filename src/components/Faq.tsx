@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "react-responsive";
 
-import sectionBg from "../../public/_DSC8008.jpg";
+// import sectionBg from "../../public/_DSC8008.jpg";
 
 interface FAQItem {
   question: string;

@@ -8,7 +8,7 @@ import CursorBlob from "./CursorBlob";
 import PageBreak from "./PageBreak";
 import { motion } from "framer-motion";
 import AnimatedImageSlider from "./components/ImageCarousel/AnimatedImageSlider";
-import AboutUs from "./components/AboutUs";
+// import AboutUs from "./components/AboutUs";
 import PageWrapper from "./PageWrapper";
 import Faq from "./components/Faq";
 import AboutUsDesktop from "./components/aboutUsDesktop";
