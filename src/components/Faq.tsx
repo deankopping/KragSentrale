@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "react-responsive";
 
-// import sectionBg from "../../public/_DSC8008.jpg";
-
 interface FAQItem {
   question: string;
   answer: string;
@@ -24,8 +22,7 @@ const Faq = () => {
   const faqItems: FAQItem[] = [
     {
       question: "RENTAL SHOES",
-      answer:
-        "We do not offer rental shoes.",
+      answer: "We do not offer rental shoes.",
     },
     {
       question: "LOAD SHEDDING",

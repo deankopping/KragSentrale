@@ -5,7 +5,7 @@
   width: 100%;
   height: 96vh;
 
-  background-image: url("../../public/bannerImage2.jpg");
+  background-image: url("/bannerImage2.jpg");
   background-size: 100%;
   background-position: center;
 
@@ -78,7 +78,7 @@
   .homeBanner {
     justify-content: center;
 
-    background-image: url("../../public/mobileBannerImage2.jpg");
+    background-image: url("../..//mobileBannerImage2.jpg");
     background-size: cover;
 
     border-radius: 0%;
@@ -93,30 +93,6 @@
   }
 }
 
-/* 
-path {
-  fill: transparent;
-  stroke: var(--colorOrange);
-
-  stroke-width: 0.2;
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
-  animation: textAnimation 1.3s ease-in 1 forwards;
-}
-
-@keyframes textAnimation {
-  0% {
-    stroke-dashoffset: 50;
-  }
-  80% {
-    fill: transparent;
-  }
-  100% {
-    fill: var(--colorOrange);
-    opacity: 100%;
-    stroke-dashoffset: 0;
-  }
-} */
 .homeBannerText {
   flex-direction: column;
   padding: 1.5em;

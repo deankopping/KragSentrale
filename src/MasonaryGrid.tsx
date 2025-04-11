@@ -8,7 +8,7 @@ interface MasonryColumn {
   height: number;
 }
 
-const imageFiles = import.meta.glob("/public/**/*.{jpg,jpeg,png}", {
+const imageFiles = import.meta.glob("/**/*.{jpg,jpeg,png}", {
   eager: true,
   as: "url",
 });

@@ -17,6 +17,7 @@ const PopUpMenu = ({
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+
     if (element) {
       const headerOffset = isMobile ? 75 : 20;
       const elementPosition = element.getBoundingClientRect().top;

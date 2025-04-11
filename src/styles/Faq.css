@@ -28,7 +28,7 @@
 }
 
 .background {
-  background-image: url("../../public/bgFAQ.jpg");
+  background-image: url("/bgFAQ.jpg");
 }
 
 .faq-item {

@@ -27,7 +27,7 @@
 }
 
 .mapSectionBackground {
-  background-image: url("../../public/entranceSectionBg.jpg");
+  background-image: url("/entranceSectionBg.jpg");
   background-size: cover;
   background-position: center;
 }

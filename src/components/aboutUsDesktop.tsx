@@ -1,4 +1,4 @@
-import img from "../../public/aboutUs.jpg";
+import img from "/aboutUs.jpg";
 import styles from "../styles/aboutUsDesktop.module.css";
 import { Typewriter } from "./typewriter";
 
