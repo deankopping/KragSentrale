@@ -4,6 +4,7 @@ const EmailVerified = () => {
 	return (
 		<div style={{ textAlign: "center", marginTop: "2rem" }}>
 			<h2>Your email has been verified!</h2>
+			<p>Your email address has been verified</p>
 			<Link to="/" style={{ color: "blue", textDecoration: "underline" }}>
 				Back to Kragsentrale homepage
 			</Link>
