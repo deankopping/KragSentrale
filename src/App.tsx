@@ -11,7 +11,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<MasonryGrid />} />
-        {/* Redirect /waiver to the external waiver URL */}
 				<Route path="/waiver" element={<Redirect to="https://waiver.smartwaiver.com/w/namxoiwk5vpgif6j9adqik/web/" />} />
 				<Route path="/waiver/complete" element={<WaiverComplete />} />
 				<Route path="/waiver/email-verified" element={<EmailVerified />} />
