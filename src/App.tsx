@@ -1,14 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
 import HomePage from "./HomePage";
 import MasonryGrid from "./MasonaryGrid";
+import WaiverComplete from "./WaiverComplete";
+import EmailVerified from "./EmailVerified";
+import Redirect from "./Redirect";
 
 const App = () => {
-	const Redirect = ({ to }: { to: string }) => {
-		useEffect(() => { window.location.href = to; }, [to]);
-		return <p>Redirecting...</p>;
-	};
-
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
@@ -16,6 +13,8 @@ const App = () => {
         <Route path="/gallery" element={<MasonryGrid />} />
         {/* Redirect /waiver to the external waiver URL */}
 				<Route path="/waiver" element={<Redirect to="https://waiver.smartwaiver.com/w/namxoiwk5vpgif6j9adqik/web/" />} />
+				<Route path="/waiver/complete" element={<WaiverComplete />} />
+				<Route path="/waiver/email-verified" element={<EmailVerified />} />
       </Routes>
     </BrowserRouter>
   );
