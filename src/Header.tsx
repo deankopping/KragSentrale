@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./styles/header.module.css";
 import { Divide as Hamburger } from "hamburger-react";
@@ -15,6 +16,8 @@ export interface MenuItem {
 }
 
 const Header = () => {
+	const navigate = useNavigate();
+
   const [isScrolled, setIsScrolled] = useState(window.innerWidth <= 768);
   const [isOpen, setOpen] = useState(false);
 
@@ -54,11 +57,8 @@ const Header = () => {
     { label: "LOCATION", id: "location", action: "scroll" },
     { label: "FAQs", id: "faq", action: "scroll" },
     { label: "ABOUT", id: "about", action: "scroll" },
-    {
-      label: "GALLERY",
-      action: "link",
-      id: `gallery`,
-    },
+    { label: "WAIVER", id: "waiver", action: "link" },
+    { label: "GALLERY", id: "gallery", action: "link" },
   ];
 
   return (
@@ -111,11 +111,13 @@ const Header = () => {
                     {menuItems.map((item) => (
                       <li
                         key={item.id}
-                        onClick={() =>
-                          item.action === "scroll"
-                            ? scrollToSection(item.id)
-                            : (window.location.href = `/${item.id}`)
-                        }
+												onClick={() => {
+													if (item.action === "scroll") {
+														scrollToSection(item.id);
+													} else if (item.action == "link") {
+														navigate(`/${item.id}`);
+													}
+												}}
                         className={`${styles.cursorPointer} ${styles.hoverOpacity}`}
                       >
                         {item.label}
