@@ -58,6 +58,7 @@ const Header = () => {
     { label: "FAQs", id: "faq", action: "scroll" },
     { label: "ABOUT", id: "about", action: "scroll" },
     { label: "WAIVER", id: "waiver", action: "link" },
+    { label: "VOLTAGE", id: "voltage", action: "link" },
     { label: "GALLERY", id: "gallery", action: "link" },
   ];
 
