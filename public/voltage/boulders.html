@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voltage Qualifiers</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+	<meta name="colorscheme" content="catppuccin-mocha"></meta>
+  <style>
+    * { font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace; }
+    body {
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+      padding: 1em;
+    }
+    .Exception {color: #cba6f7}
+    .-punctuation-bracket {color: #9399b2}
+    .Number {color: #fab387; font-weight: bold}
+    .-string-escape {color: #f5c2e7}
+    .Function {color: #89b4fa}
+    .-spell {}
+    .-function-macro {color: #94e2d5}
+    .String {color: #a6e3a1}
+    .Include {color: #cba6f7}
+    .Repeat {color: #cba6f7}
+    .Comment {font-style: italic; color: #9399b2}
+    .-keyword-function {color: #cba6f7}
+    .-variable {color: #cdd6f4}
+    .-variable-parameter {color: #eba0ac}
+    .-variable-builtin {color: #f38ba8}
+    .-module {font-style: italic; color: #b4befe}
+    .Type {color: #f9e2af}
+    .Keyword {color: #cba6f7}
+    .Special {color: #f5c2e7}
+    .Constant {color: #fab387}
+    .-constant-builtin {color: #fab387}
+    .Delimiter {color: #9399b2}
+    .Conditional {font-style: italic; color: #cba6f7}
+    .Character {color: #94e2d5}
+    .-variable-member {color: #b4befe}
+    .-type-builtin {color: #f9e2af}
+    .-_identifier {}
+    .Operator {color: #89dceb}
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+      border: 1px solid #9399b2;
+      margin: 1em 0;
+    }
+    thead {
+      background-color: #313244;
+    }
+    thead th {
+      padding: 0.5em;
+      border: 1px solid #9399b2;
+      font-weight: bold;
+      color: #cba6f7;
+    }
+    tbody td {
+      padding: 0.5em;
+      border: 1px solid #9399b2;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #2a2a40;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #1e1e2e;
+    }
+    td.number {
+      color: #fab387;
+      font-weight: bold;
+      text-align: right;
+    }
+    td code {
+      font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
+      color: #a6e3a1;
+      background-color: #313244;
+      padding: 0 0.25em;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Voltage Qualifiers: Boulder Scores 2025</h1>
+
+<table>
+<thead>
+<tr>
+<th>Boulder</th>
+<th>zone score</th>
+<th>num zones</th>
+<th>top score</th>
+<th>num tops</th>
+<th>flash score</th>
+<th>num flashes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boulder  1</td>
+<td>5.00</td>
+<td>0</td>
+<td>10.00</td>
+<td>4</td>
+<td>11.00</td>
+<td>96</td>
+</tr>
+<tr>
+<td>Boulder  2</td>
+<td>4.85</td>
+<td>0</td>
+<td>9.71</td>
+<td>3</td>
+<td>10.68</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Boulder  3</td>
+<td>4.85</td>
+<td>3</td>
+<td>10.00</td>
+<td>4</td>
+<td>11.00</td>
+<td>96</td>
+</tr>
+<tr>
+<td>Boulder  4</td>
+<td>4.81</td>
+<td>0</td>
+<td>9.62</td>
+<td>5</td>
+<td>10.58</td>
+<td>99</td>
+</tr>
+<tr>
+<td>Boulder  5</td>
+<td>4.90</td>
+<td>4</td>
+<td>10.20</td>
+<td>6</td>
+<td>11.22</td>
+<td>92</td>
+</tr>
+<tr>
+<td>Boulder  6</td>
+<td>4.90</td>
+<td>4</td>
+<td>10.20</td>
+<td>13</td>
+<td>11.22</td>
+<td>85</td>
+</tr>
+<tr>
+<td>Boulder  7</td>
+<td>5.10</td>
+<td>7</td>
+<td>10.99</td>
+<td>12</td>
+<td>12.09</td>
+<td>79</td>
+</tr>
+<tr>
+<td>Boulder  8</td>
+<td>7.94</td>
+<td>33</td>
+<td>33.33</td>
+<td>26</td>
+<td>36.67</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Boulder  9</td>
+<td>6.10</td>
+<td>24</td>
+<td>17.24</td>
+<td>36</td>
+<td>18.97</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Boulder 10</td>
+<td>8.62</td>
+<td>7</td>
+<td>19.61</td>
+<td>31</td>
+<td>21.57</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Boulder 11</td>
+<td>6.94</td>
+<td>16</td>
+<td>17.86</td>
+<td>25</td>
+<td>19.64</td>
+<td>31</td>
+</tr>
+<tr>
+<td>Boulder 12</td>
+<td>27.78</td>
+<td>5</td>
+<td>76.92</td>
+<td>9</td>
+<td>84.62</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Boulder 13</td>
+<td>50.00</td>
+<td>5</td>
+<td>200.00</td>
+<td>4</td>
+<td>220.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Boulder 14</td>
+<td>17.86</td>
+<td>17</td>
+<td>90.91</td>
+<td>7</td>
+<td>100.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Boulder 15</td>
+<td>13.89</td>
+<td>28</td>
+<td>125.00</td>
+<td>6</td>
+<td>137.50</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Boulder 16</td>
+<td>50.00</td>
+<td>4</td>
+<td>166.67</td>
+<td>5</td>
+<td>183.33</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Boulder 17</td>
+<td>71.43</td>
+<td>6</td>
+<td>1000.00</td>
+<td>1</td>
+<td>1100.00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Boulder 18</td>
+<td>500.00</td>
+<td>0</td>
+<td>1000.00</td>
+<td>0</td>
+<td>1100.00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Boulder 19</td>
+<td>500.00</td>
+<td>1</td>
+<td>1000.00</td>
+<td>0</td>
+<td>1100.00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Boulder 20</td>
+<td>71.43</td>
+<td>6</td>
+<td>1000.00</td>
+<td>1</td>
+<td>1100.00</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
