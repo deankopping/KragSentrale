@@ -5,7 +5,7 @@ const files = [
   "womens.html",
 ];
 
-const Voltage = () => {
+const Resistance = () => {
   return (
     <main
       style={{
@@ -17,7 +17,7 @@ const Voltage = () => {
     >
       {files.map((filename) => {
         const label = filename.replace(".html", "").toUpperCase();
-        const url = `${import.meta.env.BASE_URL}voltage/${filename}`;
+        const url = `${import.meta.env.BASE_URL}resistance/${filename}`;
 
         return (
           <a
@@ -56,4 +56,4 @@ const Voltage = () => {
   );
 };
 
-export default Voltage;
+export default Resistance;
