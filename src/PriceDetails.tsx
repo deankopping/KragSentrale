@@ -47,8 +47,7 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
       rows = Object.values(sessionPassData);
       description =
         "A single session pass grants you access to the gym for 12h from when you use it. When you have an active time pass they are not used. These passes expire after 3 months.";
-      //heading = "Session Pass Pricing";
-      heading = "Coming soon...";
+      heading = "Session Pass Pricing";
       break;
 
     case PassTypes.timePass:
