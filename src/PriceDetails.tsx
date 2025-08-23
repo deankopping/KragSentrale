@@ -88,7 +88,7 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
                   padding: "8px",
                   textAlign: "left",
                   border: "1px solid #ccc",
-                  backgroundColor: "#f4f4f4",
+                  backgroundColor: "#45475A",
                 }}
               >
                 {heading}

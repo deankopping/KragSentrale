@@ -40,31 +40,18 @@ const Footer = () => {
       <motion.div className="footer-top-text-container">
         <div className="footerTextGroup">
           <motion.h1>CONTACT US</motion.h1>
-          <a href="mailto:kragsentrale@gmail.com" className="footerTextItem">
-            kragsentrale@gmail.com
-          </a>
-         <a href="tel:+27609015122" className="footerTextItem">
-            Whatsapp message only: +27609015122
-          </a>
-        </div>
-        <div className="footerTextGroup">
-          <motion.h1>FOLLOW US</motion.h1>
-          <a href="" className="footerTextItem">
-            Instagram
-          </a>
+          <a href="mailto:info@kragsentrale.co.za" className="footerTextItem">info@kragsentrale.co.za</a>
+          <a href="https://www.instagram.com/kragsentrale/" className="footerTextItem">instagram</a>
         </div>
         <div className="footerTextGroup">
           <motion.h1>FIND US</motion.h1>
-          <a className="footerTextItem">48 Milton Road, Observatory</a>
-          <a className="footerTextItem">Cape Town</a>
+          <a href="https://maps.app.goo.gl/3xCP8WDUmsbPjbLw8" className="footerTextItem">48 Milton Road, Observatory, Cape Town</a>
         </div>
         <div className="footerTextGroup">
-          <motion.h1>COMPANY</motion.h1>
-          <a className="footerTextItem">Terms and Conditions</a>
-
-          <a className="footerTextItem">Privacy Policy</a>
+          <motion.h1>TERMS AND CONDITIONS</motion.h1>
+          <a href="/terms-and-conditions#terms-of-use" className="footerTextItem">Terms of Use</a>
+          <a href="/terms-and-conditions#privacy-policy" className="footerTextItem">Privacy Policy</a>
         </div>
-        <div className="allRightsReserevd">© all rights reserved</div>
       </motion.div>
 
       <motion.div
@@ -81,7 +68,7 @@ const Footer = () => {
             whileHover={{
               y: -40,
               scale: 1.2,
-              color: "#e1381b",
+              color: "#F38BA8",
               transition: {
                 duration: 0.1,
                 ease: "linear",

@@ -44,7 +44,7 @@ const MapComponent = () => {
               defaultCenter={location}
             >
               <AdvancedMarker position={location}>
-                <Pin glyphColor="black" borderColor="#e1381b" />
+                <Pin glyphColor="black" borderColor="#F38BA8" />
               </AdvancedMarker>
             </Map>
           </APIProvider>

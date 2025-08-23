@@ -50,7 +50,7 @@ const PriceList = () => {
             {priceList.map((item, index) => (
               <motion.div
                 style={{
-                  backgroundColor: index === clickedIndex ? "#e1381b" : "",
+                  backgroundColor: index === clickedIndex ? "#F38BA8" : "",
                   color: index === clickedIndex ? "white" : "",
                 }}
                 className="priceListCard"
@@ -89,7 +89,7 @@ const PriceList = () => {
                     strong: ({ children }) => (
                       <strong
                         style={{
-                          color: "#e1381b",
+                          color: "#F38BA8",
                           fontWeight: "bold",
                         }}
                       >

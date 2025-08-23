@@ -17,7 +17,7 @@
   list-style: none;
   height: 6em;
   font-weight: 700;
-  color: var(--offWhite);
+  color: var(--color);
   text-shadow: black 10;
   text-decoration: none;
   font-size: 1.3vw;
@@ -89,7 +89,7 @@
 
 li:hover {
   cursor: pointer;
-  color: var(--colorOrange);
+  color: var(--color);
   transition: color 0.3s ease;
 }
 

@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EmailVerified from "./EmailVerified";
 import HomePage from "./HomePage";
 import MasonryGrid from "./MasonaryGrid";
-import WaiverComplete from "./WaiverComplete";
-import Resistance from "./Resistance";
-import EmailVerified from "./EmailVerified";
 import Redirect from "./Redirect";
+import Resistance from "./Resistance";
+import TermsAndConditions from "./TermsAndConditions";
+import WaiverComplete from "./WaiverComplete";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
 				<Route path="/waiver" element={<Redirect to="https://waiver.smartwaiver.com/w/namxoiwk5vpgif6j9adqik/web/" />} />
 				<Route path="/waiver/complete" element={<WaiverComplete />} />
 				<Route path="/waiver/email-verified" element={<EmailVerified />} />
+				<Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   );
