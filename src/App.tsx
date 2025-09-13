@@ -3,6 +3,7 @@ import HomePage from "./HomePage";
 import MasonryGrid from "./MasonaryGrid";
 import Redirect from "./Redirect";
 import Resistance from "./Resistance";
+import Abalone from "./Abalone";
 import TermsAndConditions from "./TermsAndConditions";
 import WaiverComplete from "./WaiverComplete";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<MasonryGrid />} />
+				<Route path="/abalone" element={<Abalone />} />
         <Route path="/resistance" element={<Resistance />} />
 				<Route path="/waiver" element={<Redirect to="https://waiver.smartwaiver.com/w/namxoiwk5vpgif6j9adqik/web/" />} />
 				<Route path="/waiver/complete" element={<WaiverComplete />} />
