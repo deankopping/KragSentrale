@@ -40,6 +40,7 @@ const Footer = () => {
       <motion.div className="footer-top-text-container">
         <div className="footerTextGroup">
           <motion.h1>CONTACT US</motion.h1>
+          <a href="https://chat.whatsapp.com/IYSAfiZd1lxIrEvR8CU1u9" className="footerTextItem">WhatsApp community</a>
           <a href="mailto:info@kragsentrale.co.za" className="footerTextItem">info@kragsentrale.co.za</a>
           <a href="https://www.instagram.com/kragsentrale/" className="footerTextItem">instagram</a>
         </div>
