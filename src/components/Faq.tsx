@@ -32,17 +32,17 @@ const Faq = () => {
     {
       question: "THE SETTING SCHEDULE",
       answer:
-        "Look forward to a new set every Thursday. 8-12 brand new problems to try.",
+        "Look forward to a new set every Teusday. 8-12 brand new problems to try.",
     },
     {
       question: "GRADES",
       answer:
-        "We use a tag system which starts at 0 and goes to 5. The easiest climb we have will typically be around 6A to 6B, with the most common grade being in the range 6C to 7B.",
+        "We use a tag system which starts at 0 and goes to 5. The easiest climb we have will typically be around 6A to 6B, with the most common grade being in the range 6C to 7C.",
     },
     {
       question: "BUYING CHALK AND UTILITIES",
       answer:
-        "There is currently no chalk to be bought on premise but look forward to our vending machine stocking a wide array of chalk tape and brushes.",
+        "The vending machine should be operational :) You can chat to the staff to buy chalk and brushes and other goodies.",
     },
   ];
 
