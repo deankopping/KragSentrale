@@ -32,7 +32,7 @@ const Faq = () => {
     {
       question: "THE SETTING SCHEDULE",
       answer:
-        "Look forward to a new set every Teusday. 8-12 brand new problems to try.",
+        "Look forward to a new set every Tuesday. 8-12 brand new problems to try.",
     },
     {
       question: "GRADES",
