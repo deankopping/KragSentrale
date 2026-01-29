@@ -26,8 +26,8 @@ The gym is open to day customers on **Monday, Tuesday and Thursday, 16:00 - 21:0
     details: <TableComponent passType={PassTypes.timePass} />,
   },
   {
-    item: "THE SESSION PASS",
-    details: <TableComponent passType={PassTypes.sessionPass} />,
+    item: "THE PUNCH PASS",
+    details: <TableComponent passType={PassTypes.punchPass} />,
   },
 ];
 

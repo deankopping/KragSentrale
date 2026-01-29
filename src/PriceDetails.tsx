@@ -1,13 +1,12 @@
 import { useMediaQuery } from "react-responsive";
 
-const sessionPassData = {
+const punchPassData = {
   Demographic: [
-    "Session Pass 10 Day",
-    "Session Pass 30 Day",
+    "Punch Pass 10 Day",
+    "Punch Pass 30 Day",
   ],
-  "0 - 18": ["R500", "R1350"],
+  "Student": ["R500", "R1350"],
   "19 - ∞": ["R650", "R1750"],
-  "University Student": ["R480", "R1300"],
 };
 
 const timePassData = {
@@ -16,21 +15,19 @@ const timePassData = {
     "Time Pass 90 days",
     "Time Pass 365 days",
   ],
-  "0 - 18": ["R430", "R1160", "R4100"],
+  "Student": ["R420", "R1160", "R4100"],
   "19 - ∞": ["R550", "R1480", "R5270"],
-  "University Student": ["R420", "R1130", "R4000"],
 };
 
 const dayPassData = {
   Demographic: ["Day Pass 1 Day"],
-  "0 - 18": ["R75"],
+  "Student": ["R75"],
   "19 - ∞": ["R99"],
-  "University Student": ["R75"],
 };
 
 export enum PassTypes {
   "dayPass",
-  "sessionPass",
+  "punchPass",
   "timePass",
 }
 
@@ -42,12 +39,12 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
 
   const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
   switch (passType) {
-    case PassTypes.sessionPass:
-      headings = Object.keys(sessionPassData);
-      rows = Object.values(sessionPassData);
+    case PassTypes.punchPass:
+      headings = Object.keys(punchPassData);
+      rows = Object.values(punchPassData);
       description =
-        "A single session pass grants you access to the gym for 12h from when you use it. When you have an active time pass they are not used. These passes expire after 3 months.";
-      heading = "Session Pass Pricing";
+        "A single punch pass grants you access to the gym for 12h from when you use it. When you have an active time pass they are not used. These passes expire after 3 months.";
+      heading = "Punch Pass Pricing";
       break;
 
     case PassTypes.timePass:
@@ -62,7 +59,7 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
       headings = Object.keys(dayPassData);
       rows = Object.values(dayPassData);
       description =
-        "As a day customer you can only purchase a single session pass.";
+        "The day pass is the standard day pass you see at other gyms.";
       heading = "Day Pass Pricing";
       break;
   }

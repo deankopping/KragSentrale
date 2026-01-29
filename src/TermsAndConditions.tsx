@@ -25,7 +25,7 @@ export default function TermsAndConditions() {
 
 			<section id="refund-policy">
         <h2>Refund Policy</h2>
-        <p>Refunds are considered on a case-by-case basis. Note that if you have purchased a time-pass or a session-pass bundle, we are unlikely to grant a refund unless you are able to prove that you are completely unable to use the product. If you believe you are entitled to a refund, please feel free to contact us at <a href="mailto:info@kragsentrale.co.za">info@kragsentrale.co.za</a>.</p>
+        <p>Refunds are considered on a case-by-case basis. Note that if you have purchased a time-pass or a punch-pass bundle, we are unlikely to grant a refund unless you are able to prove that you are completely unable to use the product. If you believe you are entitled to a refund, please feel free to contact us at <a href="mailto:info@kragsentrale.co.za">info@kragsentrale.co.za</a>.</p>
       </section>
 
       <section id="privacy-policy">
