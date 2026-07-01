@@ -53,11 +53,12 @@ const Header = () => {
   };
 
   const menuItems: MenuItem[] = [
-    { label: "ENTRANCE", id: "prices", action: "scroll" },
-    { label: "LOCATION", id: "location", action: "scroll" },
+    // { label: "ENTRANCE", id: "prices", action: "scroll" },
+    // { label: "LOCATION", id: "location", action: "scroll" },
     { label: "FAQs", id: "faq", action: "scroll" },
     { label: "ABOUT", id: "about", action: "scroll" },
     { label: "WAIVER", id: "waiver", action: "link" },
+    { label: "PRODUCTS", id: "products", action: "link" },
     { label: "RESISTANCE", id: "resistance", action: "link" },
     { label: "GALLERY", id: "gallery", action: "link" },
   ];

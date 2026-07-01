@@ -20,6 +20,17 @@ const Faq = () => {
   });
 
   const faqItems: FAQItem[] = [
+      {
+          question: "UPDATE MY MEMBERSHIP",
+          answer: (
+              <>
+              Please check out this website:{" "}
+              <a href="https://paystack.shop/kragsentrale" target="_blank" rel="noopener noreferrer" >
+              https://paystack.shop/kragsentrale
+                  </a>
+              </>
+          ),
+      },
     {
       question: "RENTAL SHOES",
       answer: "We do not offer rental shoes.",
@@ -27,7 +38,7 @@ const Faq = () => {
     {
       question: "LOAD SHEDDING",
       answer:
-        "We are unfortunatly not yet load shedding proof but improvement coming soon. The gym is still open but the boards and lights will not work.",
+        "We are unfortunately not yet load shedding proof but improvement coming soon. The gym is still open but the boards and lights will not work.",
     },
     {
       question: "THE SETTING SCHEDULE",
@@ -42,7 +53,7 @@ const Faq = () => {
     {
       question: "BUYING CHALK AND UTILITIES",
       answer:
-        "The vending machine should be operational :) You can chat to the staff to buy chalk and brushes and other goodies.",
+        "You can chat to the staff to buy chalk.",
     },
   ];
 

@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 
 const punchPassData = {
-  Demographic: [
+  "Pass variant": [
     "Punch Pass 10 Day",
     "Punch Pass 30 Day",
   ],
@@ -10,7 +10,7 @@ const punchPassData = {
 };
 
 const timePassData = {
-  Demographic: [
+  "Pass variant": [
     "Time Pass 30 days",
     "Time Pass 90 days",
     "Time Pass 365 days",
@@ -20,7 +20,7 @@ const timePassData = {
 };
 
 const dayPassData = {
-  Demographic: ["Day Pass 1 Day"],
+  "Pass variant": ["Day Pass 1 Day"],
   "Student": ["R75"],
   "19 - ∞": ["R99"],
 };
