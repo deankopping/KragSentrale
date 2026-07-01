@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./Header";
 import HomeBanner from "./HomeBanner";
-import MapComponent from "./Map";
 import PriceList from "./PriceList";
 import Footer from "./components/Footer";
 import CursorBlob from "./CursorBlob";
@@ -31,10 +30,6 @@ function HomePage() {
 
         <div id="AnimatedImageSlider">
           <AnimatedImageSlider />
-        </div>
-
-        <div id="location">
-          <MapComponent />
         </div>
 
         <div id="about" className="about">
