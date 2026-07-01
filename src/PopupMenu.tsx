@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import "./styles/PopUpMenu.css";
 import { useEffect, useState } from "react";

@@ -2,7 +2,7 @@ import "./index.css";
 import styles from "./styles/homeBanner.module.css";
 import AboutUs from "./components/AboutUs";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 const HomeBanner = () => {

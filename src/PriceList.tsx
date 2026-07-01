@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles/PriceList.css";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TableComponent, { PassTypes } from "./PriceDetails";
 import ReactMarkdown from "react-markdown";

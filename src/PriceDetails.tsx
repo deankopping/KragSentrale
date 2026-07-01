@@ -1,28 +1,91 @@
 import { useMediaQuery } from "react-responsive";
 
+type Product =
+  | string
+  | {
+      price: string;
+      href: string;
+    };
+
+const renderProductCell = (cell: Product) => {
+  if (typeof cell === "string") {
+    return cell;
+  }
+
+  return (
+    <a
+      href={cell.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: "#89b4fa",
+        textDecoration: "underline",
+      }}
+    >
+      {cell.price}
+    </a>
+  );
+};
+
 const punchPassData = {
   "Pass variant": [
     "Punch Pass 10 Day",
     "Punch Pass 30 Day",
   ],
-  "Student": ["R500", "R1350"],
-  "19 - ∞": ["R650", "R1750"],
+  "Student": [
+      {
+          price: "R500",
+          href: "https://paystack.shop/kragsentrale?product=10-sessions-student-jgpaxa"
+      },
+          "R1350"
+  ],
+  "Adult": [
+      {
+          price: "R650",
+          href: "https://paystack.shop/kragsentrale?product=10-sessions-adult-rpnpuw"
+      },
+      "R1750"
+  ],
 };
 
 const timePassData = {
-  "Pass variant": [
-    "Time Pass 30 days",
-    "Time Pass 90 days",
-    "Time Pass 365 days",
-  ],
-  "Student": ["R420", "R1160", "R4100"],
-  "19 - ∞": ["R550", "R1480", "R5270"],
+    "Pass variant": [
+        "Time Pass 30 days",
+        "Time Pass 90 days",
+        "Time Pass 365 days",
+    ],
+    "Student": [
+        {
+            price: "R420",
+            href: "https://paystack.shop/kragsentrale?product=30-day-student-pass-stcbmb"
+        },
+        "R1160",
+        "R4100"
+    ],
+    "Adult": [
+        {
+            price:"R550",
+            href: "https://paystack.shop/kragsentrale?product=30-day-adult-pass-ndhdut"
+        },
+        "R1480",
+        "R5270"
+    ],
 };
 
 const dayPassData = {
   "Pass variant": ["Day Pass 1 Day"],
-  "Student": ["R75"],
-  "19 - ∞": ["R99"],
+  "Student": [
+      {
+          price: "R75",
+          href: "https://paystack.shop/kragsentrale?product=student-day-pass-kzwlim"
+      },
+  ],
+  "Adult": [
+      {
+          price: "R99",
+          href: "https://paystack.shop/kragsentrale?product=adult-day-pass-fwcrho"
+      },
+  ],
 };
 
 export enum PassTypes {
@@ -43,7 +106,7 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
       headings = Object.keys(punchPassData);
       rows = Object.values(punchPassData);
       description =
-        "A single punch pass grants you access to the gym for 12h from when you use it. When you have an active time pass they are not used. These passes expire after 3 months.";
+          "Using a punch pass grants you access to the gym for 12h and deducts one session. These passes expire after 90 days.";
       heading = "Punch Pass Pricing";
       break;
 
@@ -106,7 +169,7 @@ const TableComponent = ({ passType }: { passType: PassTypes }) => {
                     fontSize: isMobile ? "smaller" : "medium",
                   }}
                 >
-                  {columnData[rowIndex]}
+                  {renderProductCell(columnData[rowIndex])}
                 </td>
               ))}
             </tr>
