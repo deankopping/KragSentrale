@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const Faq = () => {
