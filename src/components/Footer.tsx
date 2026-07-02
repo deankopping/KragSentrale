@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 import "../styles/Footer.css";
 import { useMediaQuery } from "react-responsive";
 
@@ -9,7 +9,7 @@ const Footer = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -19,7 +19,7 @@ const Footer = () => {
     },
   };
 
-  const letterVariants = {
+  const letterVariants: Variants = {
     hidden: {
       y: 200,
       opacity: 0,
