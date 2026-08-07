@@ -8,7 +8,7 @@ footer {
   overflow: hidden;
   margin-top: 2em;
 
-  background-color: rgb(80, 35, 20);
+  background-color: #1E1E2E;
   border-top-right-radius: 3em;
   border-top-left-radius: 3em;
 }
@@ -36,7 +36,7 @@ footer {
   padding-left: 3em;
   padding-right: 3em;
   justify-content: space-between;
-  color: var(--offWhite);
+  color: var(--color);
   font-size: medium;
   line-height: 0%;
 
@@ -55,7 +55,7 @@ footer {
 
 .footerTextItem {
   text-decoration: none;
-  color: var(--offWhite);
+  color: var(--color);
   margin-bottom: 0.8em;
 }
 

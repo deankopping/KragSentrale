@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const Faq = () => {
@@ -20,6 +20,17 @@ const Faq = () => {
   });
 
   const faqItems: FAQItem[] = [
+      {
+          question: "UPDATE MY MEMBERSHIP",
+          answer: (
+              <>
+              Please check out this website:{" "}
+              <a href="https://paystack.shop/kragsentrale" target="_blank" rel="noopener noreferrer" >
+              https://paystack.shop/kragsentrale
+                  </a>
+              </>
+          ),
+      },
     {
       question: "RENTAL SHOES",
       answer: "We do not offer rental shoes.",
@@ -27,22 +38,22 @@ const Faq = () => {
     {
       question: "LOAD SHEDDING",
       answer:
-        "We are unfortunatly not yet load shedding proof but improvement coming soon. The gym is still open but the boards and lights will not work.",
+        "We are unfortunately not yet load shedding proof but improvement coming soon. The gym is still open but the boards and lights will not work.",
     },
     {
       question: "THE SETTING SCHEDULE",
       answer:
-        "Look forward to a new set every Thursday. 8-12 brand new problems to try.",
+        "Look forward to a new set every Tuesday. 8-12 brand new problems to try.",
     },
     {
       question: "GRADES",
       answer:
-        "We use a tag system which starts at 0 and goes to 5. The easiest climb we have will typically be around 6A to 6B, with the most common grade being in the range 6C to 7B.",
+        "We use a tag system which starts at 0 and goes to 5. The easiest climb we have will typically be around 6A to 6B, with the most common grade being in the range 6C to 7C.",
     },
     {
       question: "BUYING CHALK AND UTILITIES",
       answer:
-        "There is currently no chalk to be bought on premise but look forward to our vending machine stocking a wide array of chalk tape and brushes.",
+        "You can chat to the staff to buy chalk.",
     },
   ];
 

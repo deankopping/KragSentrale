@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles/PriceList.css";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TableComponent, { PassTypes } from "./PriceDetails";
 import ReactMarkdown from "react-markdown";
@@ -11,10 +11,10 @@ const priceList = [
     item: "ENTRANCE",
     details: `
 # Members
-Members with a valid, paid membership receive **24/7 unlimited access** to the gym. Each member is provided with an NFC tag, allowing them to easily scan in and access the gym. Memberships can be acquired during regular hours when the gym is open to day customers. We highly recommend this option as the preferred way to climb at Kragsentrale.
+Members with a valid membership receive **24/7 unlimited access** to the gym. Each member is provided with an NFC tag, allowing them to easily scan in and access the gym. Memberships can be acquired on **Monday, Tuesday and Thursday, 16:00 - 21:00**. We highly recommend this option as the preferred way to climb at Kragsentrale.
 
 # Day Customers
-The gym is open to day customers on **Monday, Tuesday and Thursday, 16:00 - 21:00**. Outside of these hours, non-members can gain access as long as there is someone at the gym or if they go with an exisiting member. There are QR codes in the entrance which can be used for payment. We operate on an *honesty system* for payment. CCTV cameras are installed on the premises to ensure accountability, so please ensure to make the necessary payment when accessing the gym.
+The gym is open to day customers on **Monday, Tuesday and Thursday, 16:00 - 21:00**. Outside of these hours, non-members can gain access as long as there is someone at the gym or if they go with an existing member. There are QR codes in the entrance which can be used for payment. We operate on an *honesty system* for payment. CCTV cameras are installed on the premises to ensure accountability, so please ensure to make the necessary payment when accessing the gym.
 `,
   },
   {
@@ -26,8 +26,8 @@ The gym is open to day customers on **Monday, Tuesday and Thursday, 16:00 - 21:0
     details: <TableComponent passType={PassTypes.timePass} />,
   },
   {
-    item: "THE SESSION PASS",
-    details: <TableComponent passType={PassTypes.sessionPass} />,
+    item: "THE PUNCH PASS",
+    details: <TableComponent passType={PassTypes.punchPass} />,
   },
 ];
 
@@ -50,7 +50,7 @@ const PriceList = () => {
             {priceList.map((item, index) => (
               <motion.div
                 style={{
-                  backgroundColor: index === clickedIndex ? "#e1381b" : "",
+                  backgroundColor: index === clickedIndex ? "#F38BA8" : "",
                   color: index === clickedIndex ? "white" : "",
                 }}
                 className="priceListCard"
@@ -89,7 +89,7 @@ const PriceList = () => {
                     strong: ({ children }) => (
                       <strong
                         style={{
-                          color: "#e1381b",
+                          color: "#F38BA8",
                           fontWeight: "bold",
                         }}
                       >

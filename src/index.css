@@ -7,14 +7,14 @@
   background-size: 300%;
   animation: bg-animation 4s infinite alternate;
 
-  background-color: #e1dddb;
+  background-color: #1E1E2E;
 
-  --offWhite: rgb(248, 242, 233);
-  --colorOrange: #e1381b;
-  --bkBrown: rgb(80, 35, 20);
+  --offWhite: #1E1E2E;
+  --colorOrange: #89B4FA;
+  --bkBrown: #F38BA8;
   overflow-x: hidden;
 
-  color: rgb(80, 35, 20);
+  color: #CDD6F4;
 
   h2 {
     font-family: "protest strike";
@@ -145,7 +145,7 @@ body {
   width: 700px;
   height: 700px;
   border-radius: 100%;
-  background-image: linear-gradient(var(--colorOrange) 1%, #ffffff);
+  background-image: linear-gradient(var(--colorOrange) 1%, #89B4FA);
   filter: blur(250px);
   transition: all 450ms ease-out;
   position: fixed;

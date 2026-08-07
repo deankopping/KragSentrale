@@ -20,7 +20,7 @@
   font-family: "Oswald", serif;
   font-weight: bold;
 
-  color: var(--bkBrown);
+  color: var(--color);
   background-color: var(--offWhite);
   border-radius: 3em;
   padding: 1em;

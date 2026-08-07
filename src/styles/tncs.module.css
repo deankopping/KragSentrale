@@ -1,0 +1,31 @@
+.aboutContent {
+  display: flex;
+  gap: 2em;
+
+  color: var(--offWhite);
+  z-index: 10;
+}
+
+.termsSection h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #CDD6F4;
+  font-family: "Protest Strike";
+}
+
+.termsSection h2 {
+  font-size: 2rem;
+  color: #89B4FA;
+  font-family: "Protest Strike";
+}
+
+.termsParagraph p {
+  font-size: 1rem;
+  color: #CDD6F4;
+	font-family: "Oswald", serif;
+	font-weight: bold;
+
+	max-width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
